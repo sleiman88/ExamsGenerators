@@ -29,6 +29,7 @@ Partial Class AddExamstype
         Me.ExamsGenerator_DBDataSet = New Main.ExamsGenerator_DBDataSet()
         Me.ExamsTypetblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ExamsType_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.ExamsType_tblTableAdapter()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         CType(Me.ExamsGenerator_DBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ExamsTypetblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -36,7 +37,7 @@ Partial Class AddExamstype
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 48)
+        Me.Label1.Location = New System.Drawing.Point(140, 53)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(60, 13)
         Me.Label1.TabIndex = 0
@@ -44,14 +45,14 @@ Partial Class AddExamstype
         '
         'TextBox_ExamsType
         '
-        Me.TextBox_ExamsType.Location = New System.Drawing.Point(95, 48)
+        Me.TextBox_ExamsType.Location = New System.Drawing.Point(206, 50)
         Me.TextBox_ExamsType.Name = "TextBox_ExamsType"
         Me.TextBox_ExamsType.Size = New System.Drawing.Size(159, 20)
         Me.TextBox_ExamsType.TabIndex = 1
         '
         'Button_Save
         '
-        Me.Button_Save.Location = New System.Drawing.Point(298, 48)
+        Me.Button_Save.Location = New System.Drawing.Point(388, 48)
         Me.Button_Save.Name = "Button_Save"
         Me.Button_Save.Size = New System.Drawing.Size(75, 23)
         Me.Button_Save.TabIndex = 2
@@ -72,11 +73,23 @@ Partial Class AddExamstype
         '
         Me.ExamsType_tblTableAdapter.ClearBeforeFill = True
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.DataSource = Me.ExamsTypetblBindingSource
+        Me.ComboBox1.DisplayMember = "Name_ExamsType"
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(13, 48)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 3
+        Me.ComboBox1.ValueMember = "Id_ExamsType"
+        '
         'AddExamstype
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(436, 121)
+        Me.ClientSize = New System.Drawing.Size(489, 97)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Button_Save)
         Me.Controls.Add(Me.TextBox_ExamsType)
         Me.Controls.Add(Me.Label1)
@@ -96,4 +109,5 @@ Partial Class AddExamstype
     Friend WithEvents ExamsGenerator_DBDataSet As ExamsGenerator_DBDataSet
     Friend WithEvents ExamsTypetblBindingSource As BindingSource
     Friend WithEvents ExamsType_tblTableAdapter As ExamsGenerator_DBDataSetTableAdapters.ExamsType_tblTableAdapter
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
