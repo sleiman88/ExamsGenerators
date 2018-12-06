@@ -39,8 +39,8 @@ CREATE TABLE [dbo].[Exams_tbl](
 
 CREATE TABLE [dbo].[EssayQuest_tbl](
 	[Id_EssayQuest] int IDENTITY(1,1) PRIMARY KEY,
-	[Quest_EssamQuest] [varchar](50) NULL,
-	[Answer-EssayQuest] [varchar](50) NULL,
+	[Quest_EssamQuest] [varchar](200) NULL,
+	[Answer-EssayQuest] [varchar](200) NULL,
 	[Point_EssayQuest] [varchar](50) NULL,
 	[Id_ExamsType_EssayQuest] [numeric](18, 0) NOT NULL)
 

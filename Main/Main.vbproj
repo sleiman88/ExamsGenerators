@@ -72,10 +72,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEssay.Designer.vb">
+      <DependentUpon>AddEssay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddEssay.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AddExamstype.Designer.vb">
       <DependentUpon>AddExamstype.vb</DependentUpon>
     </Compile>
     <Compile Include="AddExamstype.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTruefalse.Designer.vb">
+      <DependentUpon>AddTruefalse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddTruefalse.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ExamsGenerator_DBDataSet.Designer.vb">
@@ -106,8 +118,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddEssay.resx">
+      <DependentUpon>AddEssay.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddExamstype.resx">
       <DependentUpon>AddExamstype.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTruefalse.resx">
+      <DependentUpon>AddTruefalse.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
