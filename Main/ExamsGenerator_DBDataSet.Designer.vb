@@ -33,9 +33,9 @@ Partial Public Class ExamsGenerator_DBDataSet
     
     Private tableExamsType_tbl As ExamsType_tblDataTable
     
-    Private tableQCMQuest_tbl As QCMQuest_tblDataTable
-    
     Private tableTrueFalse_tbl As TrueFalse_tblDataTable
+    
+    Private tableQCMQuest_tbl As QCMQuest_tblDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -78,11 +78,11 @@ Partial Public Class ExamsGenerator_DBDataSet
             If (Not (ds.Tables("ExamsType_tbl")) Is Nothing) Then
                 MyBase.Tables.Add(New ExamsType_tblDataTable(ds.Tables("ExamsType_tbl")))
             End If
-            If (Not (ds.Tables("QCMQuest_tbl")) Is Nothing) Then
-                MyBase.Tables.Add(New QCMQuest_tblDataTable(ds.Tables("QCMQuest_tbl")))
-            End If
             If (Not (ds.Tables("TrueFalse_tbl")) Is Nothing) Then
                 MyBase.Tables.Add(New TrueFalse_tblDataTable(ds.Tables("TrueFalse_tbl")))
+            End If
+            If (Not (ds.Tables("QCMQuest_tbl")) Is Nothing) Then
+                MyBase.Tables.Add(New QCMQuest_tblDataTable(ds.Tables("QCMQuest_tbl")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -145,9 +145,9 @@ Partial Public Class ExamsGenerator_DBDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property QCMQuest_tbl() As QCMQuest_tblDataTable
+    Public ReadOnly Property TrueFalse_tbl() As TrueFalse_tblDataTable
         Get
-            Return Me.tableQCMQuest_tbl
+            Return Me.tableTrueFalse_tbl
         End Get
     End Property
     
@@ -155,9 +155,9 @@ Partial Public Class ExamsGenerator_DBDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property TrueFalse_tbl() As TrueFalse_tblDataTable
+    Public ReadOnly Property QCMQuest_tbl() As QCMQuest_tblDataTable
         Get
-            Return Me.tableTrueFalse_tbl
+            Return Me.tableQCMQuest_tbl
         End Get
     End Property
     
@@ -240,11 +240,11 @@ Partial Public Class ExamsGenerator_DBDataSet
             If (Not (ds.Tables("ExamsType_tbl")) Is Nothing) Then
                 MyBase.Tables.Add(New ExamsType_tblDataTable(ds.Tables("ExamsType_tbl")))
             End If
-            If (Not (ds.Tables("QCMQuest_tbl")) Is Nothing) Then
-                MyBase.Tables.Add(New QCMQuest_tblDataTable(ds.Tables("QCMQuest_tbl")))
-            End If
             If (Not (ds.Tables("TrueFalse_tbl")) Is Nothing) Then
                 MyBase.Tables.Add(New TrueFalse_tblDataTable(ds.Tables("TrueFalse_tbl")))
+            End If
+            If (Not (ds.Tables("QCMQuest_tbl")) Is Nothing) Then
+                MyBase.Tables.Add(New QCMQuest_tblDataTable(ds.Tables("QCMQuest_tbl")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -302,16 +302,16 @@ Partial Public Class ExamsGenerator_DBDataSet
                 Me.tableExamsType_tbl.InitVars
             End If
         End If
-        Me.tableQCMQuest_tbl = CType(MyBase.Tables("QCMQuest_tbl"),QCMQuest_tblDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableQCMQuest_tbl) Is Nothing) Then
-                Me.tableQCMQuest_tbl.InitVars
-            End If
-        End If
         Me.tableTrueFalse_tbl = CType(MyBase.Tables("TrueFalse_tbl"),TrueFalse_tblDataTable)
         If (initTable = true) Then
             If (Not (Me.tableTrueFalse_tbl) Is Nothing) Then
                 Me.tableTrueFalse_tbl.InitVars
+            End If
+        End If
+        Me.tableQCMQuest_tbl = CType(MyBase.Tables("QCMQuest_tbl"),QCMQuest_tblDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableQCMQuest_tbl) Is Nothing) Then
+                Me.tableQCMQuest_tbl.InitVars
             End If
         End If
     End Sub
@@ -332,10 +332,10 @@ Partial Public Class ExamsGenerator_DBDataSet
         MyBase.Tables.Add(Me.tableExamsQuestions_tbl)
         Me.tableExamsType_tbl = New ExamsType_tblDataTable()
         MyBase.Tables.Add(Me.tableExamsType_tbl)
-        Me.tableQCMQuest_tbl = New QCMQuest_tblDataTable()
-        MyBase.Tables.Add(Me.tableQCMQuest_tbl)
         Me.tableTrueFalse_tbl = New TrueFalse_tblDataTable()
         MyBase.Tables.Add(Me.tableTrueFalse_tbl)
+        Me.tableQCMQuest_tbl = New QCMQuest_tblDataTable()
+        MyBase.Tables.Add(Me.tableQCMQuest_tbl)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -364,13 +364,13 @@ Partial Public Class ExamsGenerator_DBDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeQCMQuest_tbl() As Boolean
+    Private Function ShouldSerializeTrueFalse_tbl() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeTrueFalse_tbl() As Boolean
+    Private Function ShouldSerializeQCMQuest_tbl() As Boolean
         Return false
     End Function
     
@@ -445,10 +445,10 @@ Partial Public Class ExamsGenerator_DBDataSet
     Public Delegate Sub ExamsType_tblRowChangeEventHandler(ByVal sender As Object, ByVal e As ExamsType_tblRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub QCMQuest_tblRowChangeEventHandler(ByVal sender As Object, ByVal e As QCMQuest_tblRowChangeEvent)
+    Public Delegate Sub TrueFalse_tblRowChangeEventHandler(ByVal sender As Object, ByVal e As TrueFalse_tblRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub TrueFalse_tblRowChangeEventHandler(ByVal sender As Object, ByVal e As TrueFalse_tblRowChangeEvent)
+    Public Delegate Sub QCMQuest_tblRowChangeEventHandler(ByVal sender As Object, ByVal e As QCMQuest_tblRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -1680,368 +1680,6 @@ Partial Public Class ExamsGenerator_DBDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class QCMQuest_tblDataTable
-        Inherits Global.System.Data.TypedTableBase(Of QCMQuest_tblRow)
-        
-        Private columnId_QCMQuest As Global.System.Data.DataColumn
-        
-        Private columnQuest_QCMQuest As Global.System.Data.DataColumn
-        
-        Private columnChoiceA_QCMQuest As Global.System.Data.DataColumn
-        
-        Private columnChoiceB_QCMQuest As Global.System.Data.DataColumn
-        
-        Private columnChoiceC_QCMQuest As Global.System.Data.DataColumn
-        
-        Private columnChoiceD_QCMQuest As Global.System.Data.DataColumn
-        
-        Private columnAnswer_QCMQuest As Global.System.Data.DataColumn
-        
-        Private columnId_ExamsType_QCMQuest As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "QCMQuest_tbl"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Id_QCMQuestColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnId_QCMQuest
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Quest_QCMQuestColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnQuest_QCMQuest
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property ChoiceA_QCMQuestColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnChoiceA_QCMQuest
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property ChoiceB_QCMQuestColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnChoiceB_QCMQuest
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property ChoiceC_QCMQuestColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnChoiceC_QCMQuest
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property ChoiceD_QCMQuestColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnChoiceD_QCMQuest
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Answer_QCMQuestColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnAnswer_QCMQuest
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Id_ExamsType_QCMQuestColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnId_ExamsType_QCMQuest
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As QCMQuest_tblRow
-            Get
-                Return CType(Me.Rows(index),QCMQuest_tblRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event QCMQuest_tblRowChanging As QCMQuest_tblRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event QCMQuest_tblRowChanged As QCMQuest_tblRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event QCMQuest_tblRowDeleting As QCMQuest_tblRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event QCMQuest_tblRowDeleted As QCMQuest_tblRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddQCMQuest_tblRow(ByVal row As QCMQuest_tblRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddQCMQuest_tblRow(ByVal Quest_QCMQuest As String, ByVal ChoiceA_QCMQuest As String, ByVal ChoiceB_QCMQuest As String, ByVal ChoiceC_QCMQuest As String, ByVal ChoiceD_QCMQuest() As Byte, ByVal Answer_QCMQuest As String, ByVal Id_ExamsType_QCMQuest As Decimal) As QCMQuest_tblRow
-            Dim rowQCMQuest_tblRow As QCMQuest_tblRow = CType(Me.NewRow,QCMQuest_tblRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Quest_QCMQuest, ChoiceA_QCMQuest, ChoiceB_QCMQuest, ChoiceC_QCMQuest, ChoiceD_QCMQuest, Answer_QCMQuest, Id_ExamsType_QCMQuest}
-            rowQCMQuest_tblRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowQCMQuest_tblRow)
-            Return rowQCMQuest_tblRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindById_QCMQuest(ByVal Id_QCMQuest As Integer) As QCMQuest_tblRow
-            Return CType(Me.Rows.Find(New Object() {Id_QCMQuest}),QCMQuest_tblRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As QCMQuest_tblDataTable = CType(MyBase.Clone,QCMQuest_tblDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New QCMQuest_tblDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnId_QCMQuest = MyBase.Columns("Id_QCMQuest")
-            Me.columnQuest_QCMQuest = MyBase.Columns("Quest_QCMQuest")
-            Me.columnChoiceA_QCMQuest = MyBase.Columns("ChoiceA_QCMQuest")
-            Me.columnChoiceB_QCMQuest = MyBase.Columns("ChoiceB_QCMQuest")
-            Me.columnChoiceC_QCMQuest = MyBase.Columns("ChoiceC_QCMQuest")
-            Me.columnChoiceD_QCMQuest = MyBase.Columns("ChoiceD_QCMQuest")
-            Me.columnAnswer_QCMQuest = MyBase.Columns("Answer_QCMQuest")
-            Me.columnId_ExamsType_QCMQuest = MyBase.Columns("Id_ExamsType_QCMQuest")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnId_QCMQuest = New Global.System.Data.DataColumn("Id_QCMQuest", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnId_QCMQuest)
-            Me.columnQuest_QCMQuest = New Global.System.Data.DataColumn("Quest_QCMQuest", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnQuest_QCMQuest)
-            Me.columnChoiceA_QCMQuest = New Global.System.Data.DataColumn("ChoiceA_QCMQuest", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnChoiceA_QCMQuest)
-            Me.columnChoiceB_QCMQuest = New Global.System.Data.DataColumn("ChoiceB_QCMQuest", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnChoiceB_QCMQuest)
-            Me.columnChoiceC_QCMQuest = New Global.System.Data.DataColumn("ChoiceC_QCMQuest", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnChoiceC_QCMQuest)
-            Me.columnChoiceD_QCMQuest = New Global.System.Data.DataColumn("ChoiceD_QCMQuest", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnChoiceD_QCMQuest)
-            Me.columnAnswer_QCMQuest = New Global.System.Data.DataColumn("Answer_QCMQuest", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnAnswer_QCMQuest)
-            Me.columnId_ExamsType_QCMQuest = New Global.System.Data.DataColumn("Id_ExamsType_QCMQuest", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnId_ExamsType_QCMQuest)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId_QCMQuest}, true))
-            Me.columnId_QCMQuest.AutoIncrement = true
-            Me.columnId_QCMQuest.AutoIncrementSeed = -1
-            Me.columnId_QCMQuest.AutoIncrementStep = -1
-            Me.columnId_QCMQuest.AllowDBNull = false
-            Me.columnId_QCMQuest.ReadOnly = true
-            Me.columnId_QCMQuest.Unique = true
-            Me.columnQuest_QCMQuest.MaxLength = 200
-            Me.columnChoiceA_QCMQuest.MaxLength = 50
-            Me.columnChoiceB_QCMQuest.MaxLength = 50
-            Me.columnChoiceC_QCMQuest.MaxLength = 50
-            Me.columnAnswer_QCMQuest.MaxLength = 50
-            Me.columnId_ExamsType_QCMQuest.AllowDBNull = false
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewQCMQuest_tblRow() As QCMQuest_tblRow
-            Return CType(Me.NewRow,QCMQuest_tblRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New QCMQuest_tblRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(QCMQuest_tblRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.QCMQuest_tblRowChangedEvent) Is Nothing) Then
-                RaiseEvent QCMQuest_tblRowChanged(Me, New QCMQuest_tblRowChangeEvent(CType(e.Row,QCMQuest_tblRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.QCMQuest_tblRowChangingEvent) Is Nothing) Then
-                RaiseEvent QCMQuest_tblRowChanging(Me, New QCMQuest_tblRowChangeEvent(CType(e.Row,QCMQuest_tblRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.QCMQuest_tblRowDeletedEvent) Is Nothing) Then
-                RaiseEvent QCMQuest_tblRowDeleted(Me, New QCMQuest_tblRowChangeEvent(CType(e.Row,QCMQuest_tblRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.QCMQuest_tblRowDeletingEvent) Is Nothing) Then
-                RaiseEvent QCMQuest_tblRowDeleting(Me, New QCMQuest_tblRowChangeEvent(CType(e.Row,QCMQuest_tblRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveQCMQuest_tblRow(ByVal row As QCMQuest_tblRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As ExamsGenerator_DBDataSet = New ExamsGenerator_DBDataSet()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "QCMQuest_tblDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class TrueFalse_tblDataTable
         Inherits Global.System.Data.TypedTableBase(Of TrueFalse_tblRow)
         
@@ -2301,6 +1939,369 @@ Partial Public Class ExamsGenerator_DBDataSet
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "TrueFalse_tblDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class QCMQuest_tblDataTable
+        Inherits Global.System.Data.TypedTableBase(Of QCMQuest_tblRow)
+        
+        Private columnId_QCMQuest As Global.System.Data.DataColumn
+        
+        Private columnQuest_QCMQuest As Global.System.Data.DataColumn
+        
+        Private columnChoiceA_QCMQuest As Global.System.Data.DataColumn
+        
+        Private columnChoiceB_QCMQuest As Global.System.Data.DataColumn
+        
+        Private columnChoiceC_QCMQuest As Global.System.Data.DataColumn
+        
+        Private columnChoiceD_QCMQuest As Global.System.Data.DataColumn
+        
+        Private columnAnswer_QCMQuest As Global.System.Data.DataColumn
+        
+        Private columnId_ExamsType_QCMQuest As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "QCMQuest_tbl"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Id_QCMQuestColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnId_QCMQuest
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Quest_QCMQuestColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnQuest_QCMQuest
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ChoiceA_QCMQuestColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnChoiceA_QCMQuest
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ChoiceB_QCMQuestColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnChoiceB_QCMQuest
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ChoiceC_QCMQuestColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnChoiceC_QCMQuest
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ChoiceD_QCMQuestColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnChoiceD_QCMQuest
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Answer_QCMQuestColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAnswer_QCMQuest
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Id_ExamsType_QCMQuestColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnId_ExamsType_QCMQuest
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As QCMQuest_tblRow
+            Get
+                Return CType(Me.Rows(index),QCMQuest_tblRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event QCMQuest_tblRowChanging As QCMQuest_tblRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event QCMQuest_tblRowChanged As QCMQuest_tblRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event QCMQuest_tblRowDeleting As QCMQuest_tblRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event QCMQuest_tblRowDeleted As QCMQuest_tblRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddQCMQuest_tblRow(ByVal row As QCMQuest_tblRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddQCMQuest_tblRow(ByVal Quest_QCMQuest As String, ByVal ChoiceA_QCMQuest As String, ByVal ChoiceB_QCMQuest As String, ByVal ChoiceC_QCMQuest As String, ByVal ChoiceD_QCMQuest As String, ByVal Answer_QCMQuest As String, ByVal Id_ExamsType_QCMQuest As Decimal) As QCMQuest_tblRow
+            Dim rowQCMQuest_tblRow As QCMQuest_tblRow = CType(Me.NewRow,QCMQuest_tblRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, Quest_QCMQuest, ChoiceA_QCMQuest, ChoiceB_QCMQuest, ChoiceC_QCMQuest, ChoiceD_QCMQuest, Answer_QCMQuest, Id_ExamsType_QCMQuest}
+            rowQCMQuest_tblRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowQCMQuest_tblRow)
+            Return rowQCMQuest_tblRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindById_QCMQuest(ByVal Id_QCMQuest As Integer) As QCMQuest_tblRow
+            Return CType(Me.Rows.Find(New Object() {Id_QCMQuest}),QCMQuest_tblRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As QCMQuest_tblDataTable = CType(MyBase.Clone,QCMQuest_tblDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New QCMQuest_tblDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnId_QCMQuest = MyBase.Columns("Id_QCMQuest")
+            Me.columnQuest_QCMQuest = MyBase.Columns("Quest_QCMQuest")
+            Me.columnChoiceA_QCMQuest = MyBase.Columns("ChoiceA_QCMQuest")
+            Me.columnChoiceB_QCMQuest = MyBase.Columns("ChoiceB_QCMQuest")
+            Me.columnChoiceC_QCMQuest = MyBase.Columns("ChoiceC_QCMQuest")
+            Me.columnChoiceD_QCMQuest = MyBase.Columns("ChoiceD_QCMQuest")
+            Me.columnAnswer_QCMQuest = MyBase.Columns("Answer_QCMQuest")
+            Me.columnId_ExamsType_QCMQuest = MyBase.Columns("Id_ExamsType_QCMQuest")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnId_QCMQuest = New Global.System.Data.DataColumn("Id_QCMQuest", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnId_QCMQuest)
+            Me.columnQuest_QCMQuest = New Global.System.Data.DataColumn("Quest_QCMQuest", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnQuest_QCMQuest)
+            Me.columnChoiceA_QCMQuest = New Global.System.Data.DataColumn("ChoiceA_QCMQuest", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnChoiceA_QCMQuest)
+            Me.columnChoiceB_QCMQuest = New Global.System.Data.DataColumn("ChoiceB_QCMQuest", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnChoiceB_QCMQuest)
+            Me.columnChoiceC_QCMQuest = New Global.System.Data.DataColumn("ChoiceC_QCMQuest", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnChoiceC_QCMQuest)
+            Me.columnChoiceD_QCMQuest = New Global.System.Data.DataColumn("ChoiceD_QCMQuest", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnChoiceD_QCMQuest)
+            Me.columnAnswer_QCMQuest = New Global.System.Data.DataColumn("Answer_QCMQuest", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAnswer_QCMQuest)
+            Me.columnId_ExamsType_QCMQuest = New Global.System.Data.DataColumn("Id_ExamsType_QCMQuest", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnId_ExamsType_QCMQuest)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId_QCMQuest}, true))
+            Me.columnId_QCMQuest.AutoIncrement = true
+            Me.columnId_QCMQuest.AutoIncrementSeed = -1
+            Me.columnId_QCMQuest.AutoIncrementStep = -1
+            Me.columnId_QCMQuest.AllowDBNull = false
+            Me.columnId_QCMQuest.ReadOnly = true
+            Me.columnId_QCMQuest.Unique = true
+            Me.columnQuest_QCMQuest.MaxLength = 200
+            Me.columnChoiceA_QCMQuest.MaxLength = 50
+            Me.columnChoiceB_QCMQuest.MaxLength = 50
+            Me.columnChoiceC_QCMQuest.MaxLength = 50
+            Me.columnChoiceD_QCMQuest.MaxLength = 50
+            Me.columnAnswer_QCMQuest.MaxLength = 50
+            Me.columnId_ExamsType_QCMQuest.AllowDBNull = false
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewQCMQuest_tblRow() As QCMQuest_tblRow
+            Return CType(Me.NewRow,QCMQuest_tblRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New QCMQuest_tblRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(QCMQuest_tblRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.QCMQuest_tblRowChangedEvent) Is Nothing) Then
+                RaiseEvent QCMQuest_tblRowChanged(Me, New QCMQuest_tblRowChangeEvent(CType(e.Row,QCMQuest_tblRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.QCMQuest_tblRowChangingEvent) Is Nothing) Then
+                RaiseEvent QCMQuest_tblRowChanging(Me, New QCMQuest_tblRowChangeEvent(CType(e.Row,QCMQuest_tblRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.QCMQuest_tblRowDeletedEvent) Is Nothing) Then
+                RaiseEvent QCMQuest_tblRowDeleted(Me, New QCMQuest_tblRowChangeEvent(CType(e.Row,QCMQuest_tblRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.QCMQuest_tblRowDeletingEvent) Is Nothing) Then
+                RaiseEvent QCMQuest_tblRowDeleting(Me, New QCMQuest_tblRowChangeEvent(CType(e.Row,QCMQuest_tblRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemoveQCMQuest_tblRow(ByVal row As QCMQuest_tblRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As ExamsGenerator_DBDataSet = New ExamsGenerator_DBDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "QCMQuest_tblDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -2767,6 +2768,98 @@ Partial Public Class ExamsGenerator_DBDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
+    Partial Public Class TrueFalse_tblRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableTrueFalse_tbl As TrueFalse_tblDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableTrueFalse_tbl = CType(Me.Table,TrueFalse_tblDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Id_TrueFalseQuest() As Integer
+            Get
+                Return CType(Me(Me.tableTrueFalse_tbl.Id_TrueFalseQuestColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableTrueFalse_tbl.Id_TrueFalseQuestColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Quest_TrueFalseQuest() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableTrueFalse_tbl.Quest_TrueFalseQuestColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Quest_TrueFalseQuest' in table 'TrueFalse_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableTrueFalse_tbl.Quest_TrueFalseQuestColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Answer_TrueFalseQuest() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableTrueFalse_tbl.Answer_TrueFalseQuestColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Answer_TrueFalseQuest' in table 'TrueFalse_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableTrueFalse_tbl.Answer_TrueFalseQuestColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Id_ExamsType_TrueFalseQuest() As Decimal
+            Get
+                Return CType(Me(Me.tableTrueFalse_tbl.Id_ExamsType_TrueFalseQuestColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableTrueFalse_tbl.Id_ExamsType_TrueFalseQuestColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsQuest_TrueFalseQuestNull() As Boolean
+            Return Me.IsNull(Me.tableTrueFalse_tbl.Quest_TrueFalseQuestColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetQuest_TrueFalseQuestNull()
+            Me(Me.tableTrueFalse_tbl.Quest_TrueFalseQuestColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsAnswer_TrueFalseQuestNull() As Boolean
+            Return Me.IsNull(Me.tableTrueFalse_tbl.Answer_TrueFalseQuestColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetAnswer_TrueFalseQuestNull()
+            Me(Me.tableTrueFalse_tbl.Answer_TrueFalseQuestColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
     Partial Public Class QCMQuest_tblRow
         Inherits Global.System.Data.DataRow
         
@@ -2852,10 +2945,10 @@ Partial Public Class ExamsGenerator_DBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ChoiceD_QCMQuest() As Byte()
+        Public Property ChoiceD_QCMQuest() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableQCMQuest_tbl.ChoiceD_QCMQuestColumn),Byte())
+                    Return CType(Me(Me.tableQCMQuest_tbl.ChoiceD_QCMQuestColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'ChoiceD_QCMQuest' in table 'QCMQuest_tbl' is DBNull.", e)
                 End Try
@@ -2961,98 +3054,6 @@ Partial Public Class ExamsGenerator_DBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetAnswer_QCMQuestNull()
             Me(Me.tableQCMQuest_tbl.Answer_QCMQuestColumn) = Global.System.Convert.DBNull
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class TrueFalse_tblRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableTrueFalse_tbl As TrueFalse_tblDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableTrueFalse_tbl = CType(Me.Table,TrueFalse_tblDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Id_TrueFalseQuest() As Integer
-            Get
-                Return CType(Me(Me.tableTrueFalse_tbl.Id_TrueFalseQuestColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableTrueFalse_tbl.Id_TrueFalseQuestColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Quest_TrueFalseQuest() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableTrueFalse_tbl.Quest_TrueFalseQuestColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Quest_TrueFalseQuest' in table 'TrueFalse_tbl' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableTrueFalse_tbl.Quest_TrueFalseQuestColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Answer_TrueFalseQuest() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableTrueFalse_tbl.Answer_TrueFalseQuestColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Answer_TrueFalseQuest' in table 'TrueFalse_tbl' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableTrueFalse_tbl.Answer_TrueFalseQuestColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Id_ExamsType_TrueFalseQuest() As Decimal
-            Get
-                Return CType(Me(Me.tableTrueFalse_tbl.Id_ExamsType_TrueFalseQuestColumn),Decimal)
-            End Get
-            Set
-                Me(Me.tableTrueFalse_tbl.Id_ExamsType_TrueFalseQuestColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsQuest_TrueFalseQuestNull() As Boolean
-            Return Me.IsNull(Me.tableTrueFalse_tbl.Quest_TrueFalseQuestColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetQuest_TrueFalseQuestNull()
-            Me(Me.tableTrueFalse_tbl.Quest_TrueFalseQuestColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsAnswer_TrueFalseQuestNull() As Boolean
-            Return Me.IsNull(Me.tableTrueFalse_tbl.Answer_TrueFalseQuestColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetAnswer_TrueFalseQuestNull()
-            Me(Me.tableTrueFalse_tbl.Answer_TrueFalseQuestColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -3204,42 +3205,6 @@ Partial Public Class ExamsGenerator_DBDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class QCMQuest_tblRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As QCMQuest_tblRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As QCMQuest_tblRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As QCMQuest_tblRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Class TrueFalse_tblRowChangeEvent
         Inherits Global.System.EventArgs
         
@@ -3258,6 +3223,42 @@ Partial Public Class ExamsGenerator_DBDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Row() As TrueFalse_tblRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class QCMQuest_tblRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As QCMQuest_tblRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As QCMQuest_tblRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As QCMQuest_tblRow
             Get
                 Return Me.eventRow
             End Get
@@ -5006,538 +5007,6 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class QCMQuest_tblTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "QCMQuest_tbl"
-            tableMapping.ColumnMappings.Add("Id_QCMQuest", "Id_QCMQuest")
-            tableMapping.ColumnMappings.Add("Quest_QCMQuest", "Quest_QCMQuest")
-            tableMapping.ColumnMappings.Add("ChoiceA_QCMQuest", "ChoiceA_QCMQuest")
-            tableMapping.ColumnMappings.Add("ChoiceB_QCMQuest", "ChoiceB_QCMQuest")
-            tableMapping.ColumnMappings.Add("ChoiceC_QCMQuest", "ChoiceC_QCMQuest")
-            tableMapping.ColumnMappings.Add("ChoiceD_QCMQuest", "ChoiceD_QCMQuest")
-            tableMapping.ColumnMappings.Add("Answer_QCMQuest", "Answer_QCMQuest")
-            tableMapping.ColumnMappings.Add("Id_ExamsType_QCMQuest", "Id_ExamsType_QCMQuest")
-            Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[QCMQuest_tbl] WHERE (([Id_QCMQuest] = @Original_Id_QCMQuest) A"& _ 
-                "ND ((@IsNull_Quest_QCMQuest = 1 AND [Quest_QCMQuest] IS NULL) OR ([Quest_QCMQues"& _ 
-                "t] = @Original_Quest_QCMQuest)) AND ((@IsNull_ChoiceA_QCMQuest = 1 AND [ChoiceA_"& _ 
-                "QCMQuest] IS NULL) OR ([ChoiceA_QCMQuest] = @Original_ChoiceA_QCMQuest)) AND ((@"& _ 
-                "IsNull_ChoiceB_QCMQuest = 1 AND [ChoiceB_QCMQuest] IS NULL) OR ([ChoiceB_QCMQues"& _ 
-                "t] = @Original_ChoiceB_QCMQuest)) AND ((@IsNull_ChoiceC_QCMQuest = 1 AND [Choice"& _ 
-                "C_QCMQuest] IS NULL) OR ([ChoiceC_QCMQuest] = @Original_ChoiceC_QCMQuest)) AND ("& _ 
-                "(@IsNull_ChoiceD_QCMQuest = 1 AND [ChoiceD_QCMQuest] IS NULL) OR ([ChoiceD_QCMQu"& _ 
-                "est] = @Original_ChoiceD_QCMQuest)) AND ((@IsNull_Answer_QCMQuest = 1 AND [Answe"& _ 
-                "r_QCMQuest] IS NULL) OR ([Answer_QCMQuest] = @Original_Answer_QCMQuest)) AND ([I"& _ 
-                "d_ExamsType_QCMQuest] = @Original_Id_ExamsType_QCMQuest))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Quest_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Quest_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceA_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceA_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceA_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceA_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceB_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceB_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceB_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceB_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceC_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceC_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceC_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceC_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceD_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceD_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceD_QCMQuest", Global.System.Data.SqlDbType.VarBinary, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceD_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Answer_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Answer_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Answer_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Answer_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_ExamsType_QCMQuest", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_ExamsType_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[QCMQuest_tbl] ([Quest_QCMQuest], [ChoiceA_QCMQuest], [ChoiceB_"& _ 
-                "QCMQuest], [ChoiceC_QCMQuest], [ChoiceD_QCMQuest], [Answer_QCMQuest], [Id_ExamsT"& _ 
-                "ype_QCMQuest]) VALUES (@Quest_QCMQuest, @ChoiceA_QCMQuest, @ChoiceB_QCMQuest, @C"& _ 
-                "hoiceC_QCMQuest, @ChoiceD_QCMQuest, @Answer_QCMQuest, @Id_ExamsType_QCMQuest);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-                "SELECT Id_QCMQuest, Quest_QCMQuest, ChoiceA_QCMQuest, ChoiceB_QCMQuest, ChoiceC_"& _ 
-                "QCMQuest, ChoiceD_QCMQuest, Answer_QCMQuest, Id_ExamsType_QCMQuest FROM QCMQuest"& _ 
-                "_tbl WHERE (Id_QCMQuest = SCOPE_IDENTITY())"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Quest_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceA_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceA_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceB_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceB_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceC_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceC_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceD_QCMQuest", Global.System.Data.SqlDbType.VarBinary, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceD_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Answer_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Answer_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_ExamsType_QCMQuest", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_ExamsType_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[QCMQuest_tbl] SET [Quest_QCMQuest] = @Quest_QCMQuest, [ChoiceA_QCMQ"& _ 
-                "uest] = @ChoiceA_QCMQuest, [ChoiceB_QCMQuest] = @ChoiceB_QCMQuest, [ChoiceC_QCMQ"& _ 
-                "uest] = @ChoiceC_QCMQuest, [ChoiceD_QCMQuest] = @ChoiceD_QCMQuest, [Answer_QCMQu"& _ 
-                "est] = @Answer_QCMQuest, [Id_ExamsType_QCMQuest] = @Id_ExamsType_QCMQuest WHERE "& _ 
-                "(([Id_QCMQuest] = @Original_Id_QCMQuest) AND ((@IsNull_Quest_QCMQuest = 1 AND [Q"& _ 
-                "uest_QCMQuest] IS NULL) OR ([Quest_QCMQuest] = @Original_Quest_QCMQuest)) AND (("& _ 
-                "@IsNull_ChoiceA_QCMQuest = 1 AND [ChoiceA_QCMQuest] IS NULL) OR ([ChoiceA_QCMQue"& _ 
-                "st] = @Original_ChoiceA_QCMQuest)) AND ((@IsNull_ChoiceB_QCMQuest = 1 AND [Choic"& _ 
-                "eB_QCMQuest] IS NULL) OR ([ChoiceB_QCMQuest] = @Original_ChoiceB_QCMQuest)) AND "& _ 
-                "((@IsNull_ChoiceC_QCMQuest = 1 AND [ChoiceC_QCMQuest] IS NULL) OR ([ChoiceC_QCMQ"& _ 
-                "uest] = @Original_ChoiceC_QCMQuest)) AND ((@IsNull_ChoiceD_QCMQuest = 1 AND [Cho"& _ 
-                "iceD_QCMQuest] IS NULL) OR ([ChoiceD_QCMQuest] = @Original_ChoiceD_QCMQuest)) AN"& _ 
-                "D ((@IsNull_Answer_QCMQuest = 1 AND [Answer_QCMQuest] IS NULL) OR ([Answer_QCMQu"& _ 
-                "est] = @Original_Answer_QCMQuest)) AND ([Id_ExamsType_QCMQuest] = @Original_Id_E"& _ 
-                "xamsType_QCMQuest));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id_QCMQuest, Quest_QCMQuest, ChoiceA_QCMQuest, Choi"& _ 
-                "ceB_QCMQuest, ChoiceC_QCMQuest, ChoiceD_QCMQuest, Answer_QCMQuest, Id_ExamsType_"& _ 
-                "QCMQuest FROM QCMQuest_tbl WHERE (Id_QCMQuest = @Id_QCMQuest)"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Quest_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceA_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceA_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceB_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceB_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceC_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceC_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceD_QCMQuest", Global.System.Data.SqlDbType.VarBinary, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceD_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Answer_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Answer_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_ExamsType_QCMQuest", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_ExamsType_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Quest_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Quest_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceA_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceA_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceA_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceA_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceB_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceB_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceB_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceB_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceC_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceC_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceC_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceC_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceD_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceD_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceD_QCMQuest", Global.System.Data.SqlDbType.VarBinary, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceD_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Answer_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Answer_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Answer_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Answer_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_ExamsType_QCMQuest", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_ExamsType_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_QCMQuest", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.Main.My.MySettings.Default.ExamsGenerator_DBConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Id_QCMQuest, Quest_QCMQuest, ChoiceA_QCMQuest, ChoiceB_QCMQuest, ChoiceC_Q"& _ 
-                "CMQuest, ChoiceD_QCMQuest, Answer_QCMQuest, Id_ExamsType_QCMQuest FROM dbo.QCMQu"& _ 
-                "est_tbl"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As ExamsGenerator_DBDataSet.QCMQuest_tblDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As ExamsGenerator_DBDataSet.QCMQuest_tblDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As ExamsGenerator_DBDataSet.QCMQuest_tblDataTable = New ExamsGenerator_DBDataSet.QCMQuest_tblDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As ExamsGenerator_DBDataSet.QCMQuest_tblDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As ExamsGenerator_DBDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "QCMQuest_tbl")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id_QCMQuest As Integer, ByVal Original_Quest_QCMQuest As String, ByVal Original_ChoiceA_QCMQuest As String, ByVal Original_ChoiceB_QCMQuest As String, ByVal Original_ChoiceC_QCMQuest As String, ByVal Original_ChoiceD_QCMQuest() As Byte, ByVal Original_Answer_QCMQuest As String, ByVal Original_Id_ExamsType_QCMQuest As Decimal) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id_QCMQuest,Integer)
-            If (Original_Quest_QCMQuest Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Quest_QCMQuest,String)
-            End If
-            If (Original_ChoiceA_QCMQuest Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_ChoiceA_QCMQuest,String)
-            End If
-            If (Original_ChoiceB_QCMQuest Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_ChoiceB_QCMQuest,String)
-            End If
-            If (Original_ChoiceC_QCMQuest Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_ChoiceC_QCMQuest,String)
-            End If
-            If (Original_ChoiceD_QCMQuest Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_ChoiceD_QCMQuest,Byte())
-            End If
-            If (Original_Answer_QCMQuest Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Answer_QCMQuest,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_Id_ExamsType_QCMQuest,Decimal)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Quest_QCMQuest As String, ByVal ChoiceA_QCMQuest As String, ByVal ChoiceB_QCMQuest As String, ByVal ChoiceC_QCMQuest As String, ByVal ChoiceD_QCMQuest() As Byte, ByVal Answer_QCMQuest As String, ByVal Id_ExamsType_QCMQuest As Decimal) As Integer
-            If (Quest_QCMQuest Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Quest_QCMQuest,String)
-            End If
-            If (ChoiceA_QCMQuest Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(ChoiceA_QCMQuest,String)
-            End If
-            If (ChoiceB_QCMQuest Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(ChoiceB_QCMQuest,String)
-            End If
-            If (ChoiceC_QCMQuest Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(ChoiceC_QCMQuest,String)
-            End If
-            If (ChoiceD_QCMQuest Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(ChoiceD_QCMQuest,Byte())
-            End If
-            If (Answer_QCMQuest Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Answer_QCMQuest,String)
-            End If
-            Me.Adapter.InsertCommand.Parameters(6).Value = CType(Id_ExamsType_QCMQuest,Decimal)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal Quest_QCMQuest As String,  _
-                    ByVal ChoiceA_QCMQuest As String,  _
-                    ByVal ChoiceB_QCMQuest As String,  _
-                    ByVal ChoiceC_QCMQuest As String,  _
-                    ByVal ChoiceD_QCMQuest() As Byte,  _
-                    ByVal Answer_QCMQuest As String,  _
-                    ByVal Id_ExamsType_QCMQuest As Decimal,  _
-                    ByVal Original_Id_QCMQuest As Integer,  _
-                    ByVal Original_Quest_QCMQuest As String,  _
-                    ByVal Original_ChoiceA_QCMQuest As String,  _
-                    ByVal Original_ChoiceB_QCMQuest As String,  _
-                    ByVal Original_ChoiceC_QCMQuest As String,  _
-                    ByVal Original_ChoiceD_QCMQuest() As Byte,  _
-                    ByVal Original_Answer_QCMQuest As String,  _
-                    ByVal Original_Id_ExamsType_QCMQuest As Decimal,  _
-                    ByVal Id_QCMQuest As Integer) As Integer
-            If (Quest_QCMQuest Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Quest_QCMQuest,String)
-            End If
-            If (ChoiceA_QCMQuest Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(ChoiceA_QCMQuest,String)
-            End If
-            If (ChoiceB_QCMQuest Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(ChoiceB_QCMQuest,String)
-            End If
-            If (ChoiceC_QCMQuest Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(ChoiceC_QCMQuest,String)
-            End If
-            If (ChoiceD_QCMQuest Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(ChoiceD_QCMQuest,Byte())
-            End If
-            If (Answer_QCMQuest Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Answer_QCMQuest,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Id_ExamsType_QCMQuest,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Id_QCMQuest,Integer)
-            If (Original_Quest_QCMQuest Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Quest_QCMQuest,String)
-            End If
-            If (Original_ChoiceA_QCMQuest Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_ChoiceA_QCMQuest,String)
-            End If
-            If (Original_ChoiceB_QCMQuest Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_ChoiceB_QCMQuest,String)
-            End If
-            If (Original_ChoiceC_QCMQuest Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_ChoiceC_QCMQuest,String)
-            End If
-            If (Original_ChoiceD_QCMQuest Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_ChoiceD_QCMQuest,Byte())
-            End If
-            If (Original_Answer_QCMQuest Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Answer_QCMQuest,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_Id_ExamsType_QCMQuest,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Id_QCMQuest,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Quest_QCMQuest As String, ByVal ChoiceA_QCMQuest As String, ByVal ChoiceB_QCMQuest As String, ByVal ChoiceC_QCMQuest As String, ByVal ChoiceD_QCMQuest() As Byte, ByVal Answer_QCMQuest As String, ByVal Id_ExamsType_QCMQuest As Decimal, ByVal Original_Id_QCMQuest As Integer, ByVal Original_Quest_QCMQuest As String, ByVal Original_ChoiceA_QCMQuest As String, ByVal Original_ChoiceB_QCMQuest As String, ByVal Original_ChoiceC_QCMQuest As String, ByVal Original_ChoiceD_QCMQuest() As Byte, ByVal Original_Answer_QCMQuest As String, ByVal Original_Id_ExamsType_QCMQuest As Decimal) As Integer
-            Return Me.Update(Quest_QCMQuest, ChoiceA_QCMQuest, ChoiceB_QCMQuest, ChoiceC_QCMQuest, ChoiceD_QCMQuest, Answer_QCMQuest, Id_ExamsType_QCMQuest, Original_Id_QCMQuest, Original_Quest_QCMQuest, Original_ChoiceA_QCMQuest, Original_ChoiceB_QCMQuest, Original_ChoiceC_QCMQuest, Original_ChoiceD_QCMQuest, Original_Answer_QCMQuest, Original_Id_ExamsType_QCMQuest, Original_Id_QCMQuest)
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
     Partial Public Class TrueFalse_tblTableAdapter
         Inherits Global.System.ComponentModel.Component
         
@@ -5988,6 +5457,408 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
     End Class
     
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class QCMQuest_tblTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "QCMQuest_tbl"
+            tableMapping.ColumnMappings.Add("Id_QCMQuest", "Id_QCMQuest")
+            tableMapping.ColumnMappings.Add("Quest_QCMQuest", "Quest_QCMQuest")
+            tableMapping.ColumnMappings.Add("ChoiceA_QCMQuest", "ChoiceA_QCMQuest")
+            tableMapping.ColumnMappings.Add("ChoiceB_QCMQuest", "ChoiceB_QCMQuest")
+            tableMapping.ColumnMappings.Add("ChoiceC_QCMQuest", "ChoiceC_QCMQuest")
+            tableMapping.ColumnMappings.Add("ChoiceD_QCMQuest", "ChoiceD_QCMQuest")
+            tableMapping.ColumnMappings.Add("Answer_QCMQuest", "Answer_QCMQuest")
+            tableMapping.ColumnMappings.Add("Id_ExamsType_QCMQuest", "Id_ExamsType_QCMQuest")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [QCMQuest_tbl] WHERE (([Id_QCMQuest] = @Original_Id_QCMQuest) AND ((@"& _ 
+                "IsNull_Quest_QCMQuest = 1 AND [Quest_QCMQuest] IS NULL) OR ([Quest_QCMQuest] = @"& _ 
+                "Original_Quest_QCMQuest)) AND ((@IsNull_ChoiceA_QCMQuest = 1 AND [ChoiceA_QCMQue"& _ 
+                "st] IS NULL) OR ([ChoiceA_QCMQuest] = @Original_ChoiceA_QCMQuest)) AND ((@IsNull"& _ 
+                "_ChoiceB_QCMQuest = 1 AND [ChoiceB_QCMQuest] IS NULL) OR ([ChoiceB_QCMQuest] = @"& _ 
+                "Original_ChoiceB_QCMQuest)) AND ((@IsNull_ChoiceC_QCMQuest = 1 AND [ChoiceC_QCMQ"& _ 
+                "uest] IS NULL) OR ([ChoiceC_QCMQuest] = @Original_ChoiceC_QCMQuest)) AND ((@IsNu"& _ 
+                "ll_ChoiceD_QCMQuest = 1 AND [ChoiceD_QCMQuest] IS NULL) OR ([ChoiceD_QCMQuest] ="& _ 
+                " @Original_ChoiceD_QCMQuest)) AND ((@IsNull_Answer_QCMQuest = 1 AND [Answer_QCMQ"& _ 
+                "uest] IS NULL) OR ([Answer_QCMQuest] = @Original_Answer_QCMQuest)) AND ([Id_Exam"& _ 
+                "sType_QCMQuest] = @Original_Id_ExamsType_QCMQuest))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Quest_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Quest_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceA_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceA_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceA_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceA_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceB_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceB_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceB_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceB_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceC_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceC_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceC_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceC_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceD_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceD_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceD_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceD_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Answer_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Answer_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Answer_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Answer_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_ExamsType_QCMQuest", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_ExamsType_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [QCMQuest_tbl] ([Quest_QCMQuest], [ChoiceA_QCMQuest], [ChoiceB_QCMQue"& _ 
+                "st], [ChoiceC_QCMQuest], [ChoiceD_QCMQuest], [Answer_QCMQuest], [Id_ExamsType_QC"& _ 
+                "MQuest]) VALUES (@Quest_QCMQuest, @ChoiceA_QCMQuest, @ChoiceB_QCMQuest, @ChoiceC"& _ 
+                "_QCMQuest, @ChoiceD_QCMQuest, @Answer_QCMQuest, @Id_ExamsType_QCMQuest);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT"& _ 
+                " Id_QCMQuest, Quest_QCMQuest, ChoiceA_QCMQuest, ChoiceB_QCMQuest, ChoiceC_QCMQue"& _ 
+                "st, ChoiceD_QCMQuest, Answer_QCMQuest, Id_ExamsType_QCMQuest FROM QCMQuest_tbl W"& _ 
+                "HERE (Id_QCMQuest = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Quest_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceA_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceA_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceB_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceB_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceC_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceC_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceD_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceD_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Answer_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Answer_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_ExamsType_QCMQuest", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_ExamsType_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [QCMQuest_tbl] SET [Quest_QCMQuest] = @Quest_QCMQuest, [ChoiceA_QCMQuest] "& _ 
+                "= @ChoiceA_QCMQuest, [ChoiceB_QCMQuest] = @ChoiceB_QCMQuest, [ChoiceC_QCMQuest] "& _ 
+                "= @ChoiceC_QCMQuest, [ChoiceD_QCMQuest] = @ChoiceD_QCMQuest, [Answer_QCMQuest] ="& _ 
+                " @Answer_QCMQuest, [Id_ExamsType_QCMQuest] = @Id_ExamsType_QCMQuest WHERE (([Id_"& _ 
+                "QCMQuest] = @Original_Id_QCMQuest) AND ((@IsNull_Quest_QCMQuest = 1 AND [Quest_Q"& _ 
+                "CMQuest] IS NULL) OR ([Quest_QCMQuest] = @Original_Quest_QCMQuest)) AND ((@IsNul"& _ 
+                "l_ChoiceA_QCMQuest = 1 AND [ChoiceA_QCMQuest] IS NULL) OR ([ChoiceA_QCMQuest] = "& _ 
+                "@Original_ChoiceA_QCMQuest)) AND ((@IsNull_ChoiceB_QCMQuest = 1 AND [ChoiceB_QCM"& _ 
+                "Quest] IS NULL) OR ([ChoiceB_QCMQuest] = @Original_ChoiceB_QCMQuest)) AND ((@IsN"& _ 
+                "ull_ChoiceC_QCMQuest = 1 AND [ChoiceC_QCMQuest] IS NULL) OR ([ChoiceC_QCMQuest] "& _ 
+                "= @Original_ChoiceC_QCMQuest)) AND ((@IsNull_ChoiceD_QCMQuest = 1 AND [ChoiceD_Q"& _ 
+                "CMQuest] IS NULL) OR ([ChoiceD_QCMQuest] = @Original_ChoiceD_QCMQuest)) AND ((@I"& _ 
+                "sNull_Answer_QCMQuest = 1 AND [Answer_QCMQuest] IS NULL) OR ([Answer_QCMQuest] ="& _ 
+                " @Original_Answer_QCMQuest)) AND ([Id_ExamsType_QCMQuest] = @Original_Id_ExamsTy"& _ 
+                "pe_QCMQuest));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id_QCMQuest, Quest_QCMQuest, ChoiceA_QCMQuest, ChoiceB_QC"& _ 
+                "MQuest, ChoiceC_QCMQuest, ChoiceD_QCMQuest, Answer_QCMQuest, Id_ExamsType_QCMQue"& _ 
+                "st FROM QCMQuest_tbl WHERE (Id_QCMQuest = @Id_QCMQuest)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Quest_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceA_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceA_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceB_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceB_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceC_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceC_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceD_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceD_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Answer_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Answer_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_ExamsType_QCMQuest", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_ExamsType_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Quest_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Quest_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceA_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceA_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceA_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceA_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceB_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceB_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceB_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceB_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceC_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceC_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceC_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceC_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ChoiceD_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceD_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ChoiceD_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceD_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Answer_QCMQuest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Answer_QCMQuest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Answer_QCMQuest", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Answer_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_ExamsType_QCMQuest", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_ExamsType_QCMQuest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_QCMQuest", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.Main.My.MySettings.Default.ExamsGenerator_DBConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        *"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            QCMQuest_tbl"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        COUNT(*) AS Expr1"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            QCMQuest_tbl"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where       (Quest"& _ 
+                "_QCMQuest = @Param1)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Param1", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "INSERT INTO [QCMQuest_tbl] ([Quest_QCMQuest], [ChoiceA_QCMQuest], [ChoiceB_QCMQue"& _ 
+                "st], [ChoiceC_QCMQuest], [ChoiceD_QCMQuest], [Answer_QCMQuest], [Id_ExamsType_QC"& _ 
+                "MQuest]) VALUES (@Quest_QCMQuest, @ChoiceA_QCMQuest, @ChoiceB_QCMQuest, @ChoiceC"& _ 
+                "_QCMQuest, @ChoiceD_QCMQuest, @Answer_QCMQuest, @Id_ExamsType_QCMQuest);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT"& _ 
+                " Id_QCMQuest, Quest_QCMQuest, ChoiceA_QCMQuest, ChoiceB_QCMQuest, ChoiceC_QCMQue"& _ 
+                "st, ChoiceD_QCMQuest, Answer_QCMQuest, Id_ExamsType_QCMQuest FROM QCMQuest_tbl W"& _ 
+                "HERE (Id_QCMQuest = SCOPE_IDENTITY())"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Quest_QCMQuest", Global.System.Data.SqlDbType.VarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "Quest_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceA_QCMQuest", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceA_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceB_QCMQuest", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceB_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceC_QCMQuest", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceC_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ChoiceD_QCMQuest", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "ChoiceD_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Answer_QCMQuest", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Answer_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_ExamsType_QCMQuest", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "Id_ExamsType_QCMQuest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As ExamsGenerator_DBDataSet.QCMQuest_tblDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As ExamsGenerator_DBDataSet.QCMQuest_tblDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As ExamsGenerator_DBDataSet.QCMQuest_tblDataTable = New ExamsGenerator_DBDataSet.QCMQuest_tblDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As ExamsGenerator_DBDataSet.QCMQuest_tblDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As ExamsGenerator_DBDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "QCMQuest_tbl")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function checkIfExist(ByVal Param1 As String) As Global.System.Nullable(Of Integer)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            If (Param1 Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(Param1,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return New Global.System.Nullable(Of Integer)()
+            Else
+                Return New Global.System.Nullable(Of Integer)(CType(returnValue,Integer))
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function InsertQuery(ByVal Quest_QCMQuest As String, ByVal ChoiceA_QCMQuest As String, ByVal ChoiceB_QCMQuest As String, ByVal ChoiceC_QCMQuest As String, ByVal ChoiceD_QCMQuest As String, ByVal Answer_QCMQuest As String, ByVal Id_ExamsType_QCMQuest As Decimal) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            If (Quest_QCMQuest Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(Quest_QCMQuest,String)
+            End If
+            If (ChoiceA_QCMQuest Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(ChoiceA_QCMQuest,String)
+            End If
+            If (ChoiceB_QCMQuest Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(ChoiceB_QCMQuest,String)
+            End If
+            If (ChoiceC_QCMQuest Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(ChoiceC_QCMQuest,String)
+            End If
+            If (ChoiceD_QCMQuest Is Nothing) Then
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(4).Value = CType(ChoiceD_QCMQuest,String)
+            End If
+            If (Answer_QCMQuest Is Nothing) Then
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(5).Value = CType(Answer_QCMQuest,String)
+            End If
+            command.Parameters(6).Value = CType(Id_ExamsType_QCMQuest,Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+    End Class
+    
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -6008,9 +5879,9 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
         
         Private _examsType_tblTableAdapter As ExamsType_tblTableAdapter
         
-        Private _qCMQuest_tblTableAdapter As QCMQuest_tblTableAdapter
-        
         Private _trueFalse_tblTableAdapter As TrueFalse_tblTableAdapter
+        
+        Private _qCMQuest_tblTableAdapter As QCMQuest_tblTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -6088,12 +5959,12 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property QCMQuest_tblTableAdapter() As QCMQuest_tblTableAdapter
+        Public Property TrueFalse_tblTableAdapter() As TrueFalse_tblTableAdapter
             Get
-                Return Me._qCMQuest_tblTableAdapter
+                Return Me._trueFalse_tblTableAdapter
             End Get
             Set
-                Me._qCMQuest_tblTableAdapter = value
+                Me._trueFalse_tblTableAdapter = value
             End Set
         End Property
         
@@ -6102,12 +5973,12 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property TrueFalse_tblTableAdapter() As TrueFalse_tblTableAdapter
+        Public Property QCMQuest_tblTableAdapter() As QCMQuest_tblTableAdapter
             Get
-                Return Me._trueFalse_tblTableAdapter
+                Return Me._qCMQuest_tblTableAdapter
             End Get
             Set
-                Me._trueFalse_tblTableAdapter = value
+                Me._qCMQuest_tblTableAdapter = value
             End Set
         End Property
         
@@ -6146,13 +6017,13 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
                             AndAlso (Not (Me._examsType_tblTableAdapter.Connection) Is Nothing)) Then
                     Return Me._examsType_tblTableAdapter.Connection
                 End If
-                If ((Not (Me._qCMQuest_tblTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._qCMQuest_tblTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._qCMQuest_tblTableAdapter.Connection
-                End If
                 If ((Not (Me._trueFalse_tblTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._trueFalse_tblTableAdapter.Connection) Is Nothing)) Then
                     Return Me._trueFalse_tblTableAdapter.Connection
+                End If
+                If ((Not (Me._qCMQuest_tblTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._qCMQuest_tblTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._qCMQuest_tblTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -6179,10 +6050,10 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
                 If (Not (Me._examsType_tblTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._qCMQuest_tblTableAdapter) Is Nothing) Then
+                If (Not (Me._trueFalse_tblTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._trueFalse_tblTableAdapter) Is Nothing) Then
+                If (Not (Me._qCMQuest_tblTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -6232,21 +6103,21 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._qCMQuest_tblTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.QCMQuest_tbl.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._qCMQuest_tblTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._trueFalse_tblTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.TrueFalse_tbl.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._trueFalse_tblTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._qCMQuest_tblTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.QCMQuest_tbl.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._qCMQuest_tblTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -6292,19 +6163,19 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._qCMQuest_tblTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.QCMQuest_tbl.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._qCMQuest_tblTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._trueFalse_tblTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.TrueFalse_tbl.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._trueFalse_tblTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._qCMQuest_tblTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.QCMQuest_tbl.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._qCMQuest_tblTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -6318,19 +6189,19 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As ExamsGenerator_DBDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._trueFalse_tblTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.TrueFalse_tbl.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._trueFalse_tblTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._qCMQuest_tblTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.QCMQuest_tbl.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._qCMQuest_tblTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._trueFalse_tblTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.TrueFalse_tbl.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._trueFalse_tblTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -6427,13 +6298,13 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._qCMQuest_tblTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._qCMQuest_tblTableAdapter.Connection) = false)) Then
+            If ((Not (Me._trueFalse_tblTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._trueFalse_tblTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._trueFalse_tblTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._trueFalse_tblTableAdapter.Connection) = false)) Then
+            If ((Not (Me._qCMQuest_tblTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._qCMQuest_tblTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -6505,15 +6376,6 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._examsType_tblTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._qCMQuest_tblTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._qCMQuest_tblTableAdapter, Me._qCMQuest_tblTableAdapter.Connection)
-                    Me._qCMQuest_tblTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._qCMQuest_tblTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._qCMQuest_tblTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._qCMQuest_tblTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._qCMQuest_tblTableAdapter.Adapter)
-                    End If
-                End If
                 If (Not (Me._trueFalse_tblTableAdapter) Is Nothing) Then
                     revertConnections.Add(Me._trueFalse_tblTableAdapter, Me._trueFalse_tblTableAdapter.Connection)
                     Me._trueFalse_tblTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
@@ -6521,6 +6383,15 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
                     If Me._trueFalse_tblTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._trueFalse_tblTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._trueFalse_tblTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._qCMQuest_tblTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._qCMQuest_tblTableAdapter, Me._qCMQuest_tblTableAdapter.Connection)
+                    Me._qCMQuest_tblTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._qCMQuest_tblTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._qCMQuest_tblTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._qCMQuest_tblTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._qCMQuest_tblTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -6599,13 +6470,13 @@ Namespace ExamsGenerator_DBDataSetTableAdapters
                     Me._examsType_tblTableAdapter.Connection = CType(revertConnections(Me._examsType_tblTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._examsType_tblTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._qCMQuest_tblTableAdapter) Is Nothing) Then
-                    Me._qCMQuest_tblTableAdapter.Connection = CType(revertConnections(Me._qCMQuest_tblTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._qCMQuest_tblTableAdapter.Transaction = Nothing
-                End If
                 If (Not (Me._trueFalse_tblTableAdapter) Is Nothing) Then
                     Me._trueFalse_tblTableAdapter.Connection = CType(revertConnections(Me._trueFalse_tblTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._trueFalse_tblTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._qCMQuest_tblTableAdapter) Is Nothing) Then
+                    Me._qCMQuest_tblTableAdapter.Connection = CType(revertConnections(Me._qCMQuest_tblTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._qCMQuest_tblTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

@@ -21,7 +21,7 @@ CREATE TABLE [dbo].[QCMQuest_tbl](
 	[ChoiceA_QCMQuest] [varchar](50) NULL,
 	[ChoiceB_QCMQuest] [varchar](50) NULL,
 	[ChoiceC_QCMQuest] [varchar](50) NULL,
-	[ChoiceD_QCMQuest] [varbinary](50) NULL,
+	[ChoiceD_QCMQuest] [varchar](50) NULL,
 	[Answer_QCMQuest] [varchar](50) NULL,
 	[Id_ExamsType_QCMQuest] [numeric](18, 0) NOT NULL)
  

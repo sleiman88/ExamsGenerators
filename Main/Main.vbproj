@@ -84,6 +84,12 @@
     <Compile Include="AddExamstype.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="addQCMQuestion.Designer.vb">
+      <DependentUpon>addQCMQuestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="addQCMQuestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AddTruefalse.Designer.vb">
       <DependentUpon>AddTruefalse.vb</DependentUpon>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddExamstype.resx">
       <DependentUpon>AddExamstype.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addQCMQuestion.resx">
+      <DependentUpon>addQCMQuestion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTruefalse.resx">
       <DependentUpon>AddTruefalse.vb</DependentUpon>
