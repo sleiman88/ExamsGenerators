@@ -1,12 +1,20 @@
 ﻿Public Class addQCMQuestion
+    Dim myMain As MainForm
     Private Sub addQCMQuestion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.ExamsType_tblTableAdapter.Fill(Me.ExamsGenerator_DBDataSet.ExamsType_tbl)
 
     End Sub
+    Public Sub New(main As MainForm)
 
+        ' This call is required by the designer.
+        InitializeComponent()
+        myMain = main
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
     Private Sub Button_Add_Click(sender As Object, e As EventArgs) Handles Button_Add.Click
-        work()
+        Work()
     End Sub
 
     Private Sub Work()
@@ -19,6 +27,7 @@
                 If checkIFExist() = False Then
                     Me.QCMQuest_tblTableAdapter.InsertQuery(TextBox_QCMques.Text, TextBox_A.Text, TextBox_B.Text, TextBox_C.Text, TextBox_D.Text, getTrueAnswer(), ComboBox1.SelectedValue)
                     MsgBox("added succefely ")
+                    myMain.getCount()
                     TextBox_A.Text = ""
                     TextBox_B.Text = ""
                     TextBox_C.Text = ""

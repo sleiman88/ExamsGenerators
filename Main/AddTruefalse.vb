@@ -1,8 +1,16 @@
 ﻿Public Class AddTruefalse
+    Dim myMain As MainForm
     Private Sub Button_Add_Click(sender As Object, e As EventArgs) Handles Button_Add.Click
         Work()
     End Sub
+    Public Sub New(main As MainForm)
 
+        ' This call is required by the designer.
+        InitializeComponent()
+        myMain = main
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
     Private Sub Work()
 
         If TextBox_TFQues.Text.Length = 0 Then
@@ -15,6 +23,7 @@
                 Me.TrueFalse_tblTableAdapter.InsertQuery(TextBox_TFQues.Text, RadioButton_true.Checked, Decimal.Parse(ComboBox_ExamType.SelectedValue))
 
                 MsgBox("added Succefully ")
+                myMain.getCount()
                 ' Me.ExamsType_tblTableAdapter.Fill(Me.ExamsGenerator_DBDataSet.ExamsType_tbl)
                 TextBox_TFQues.Text = ""
                 TextBox_TFQues.Focus()
