@@ -35,7 +35,9 @@
             MsgBox("Not enought question for this typpe of Exam .Please choose another Exam type or add questions first !!")
 
         Else
-            ''go to generate exam
+            Dim newGenerate As GenerateAnExam
+            newGenerate = New GenerateAnExam(ComboBox_ExamType.SelectedValue)
+            newGenerate.ShowDialog()
         End If
     End Sub
     Private Function checkQuesTotalGrade() As Boolean
