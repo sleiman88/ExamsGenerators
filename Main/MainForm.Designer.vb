@@ -44,11 +44,16 @@ Partial Class MainForm
         Me.TrueFalse_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.TrueFalse_tblTableAdapter()
         Me.QCMQuesttblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.QCMQuest_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.QCMQuest_tblTableAdapter()
+        Me.ComboBox_ExamType = New System.Windows.Forms.ComboBox()
+        Me.ExamsTypetblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ExamsType_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.ExamsType_tblTableAdapter()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.ExamsGenerator_DBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EssayQuesttblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrueFalsetblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QCMQuesttblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ExamsTypetblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -104,7 +109,7 @@ Partial Class MainForm
         '
         'Button_GenerateExam
         '
-        Me.Button_GenerateExam.Location = New System.Drawing.Point(265, 161)
+        Me.Button_GenerateExam.Location = New System.Drawing.Point(265, 181)
         Me.Button_GenerateExam.Name = "Button_GenerateExam"
         Me.Button_GenerateExam.Size = New System.Drawing.Size(75, 23)
         Me.Button_GenerateExam.TabIndex = 6
@@ -113,7 +118,7 @@ Partial Class MainForm
         '
         'Button_Old
         '
-        Me.Button_Old.Location = New System.Drawing.Point(265, 191)
+        Me.Button_Old.Location = New System.Drawing.Point(265, 210)
         Me.Button_Old.Name = "Button_Old"
         Me.Button_Old.Size = New System.Drawing.Size(75, 23)
         Me.Button_Old.TabIndex = 7
@@ -193,11 +198,42 @@ Partial Class MainForm
         '
         Me.QCMQuest_tblTableAdapter.ClearBeforeFill = True
         '
+        'ComboBox_ExamType
+        '
+        Me.ComboBox_ExamType.DataSource = Me.ExamsTypetblBindingSource
+        Me.ComboBox_ExamType.DisplayMember = "Name_ExamsType"
+        Me.ComboBox_ExamType.FormattingEnabled = True
+        Me.ComboBox_ExamType.Location = New System.Drawing.Point(130, 163)
+        Me.ComboBox_ExamType.Name = "ComboBox_ExamType"
+        Me.ComboBox_ExamType.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox_ExamType.TabIndex = 9
+        Me.ComboBox_ExamType.ValueMember = "Id_ExamsType"
+        '
+        'ExamsTypetblBindingSource
+        '
+        Me.ExamsTypetblBindingSource.DataMember = "ExamsType_tbl"
+        Me.ExamsTypetblBindingSource.DataSource = Me.ExamsGenerator_DBDataSet
+        '
+        'ExamsType_tblTableAdapter
+        '
+        Me.ExamsType_tblTableAdapter.ClearBeforeFill = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(49, 166)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(60, 13)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Exam Type"
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(457, 245)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.ComboBox_ExamType)
         Me.Controls.Add(Me.Button_Old)
         Me.Controls.Add(Me.Button_GenerateExam)
         Me.Controls.Add(Me.TextBox_QCM)
@@ -217,6 +253,7 @@ Partial Class MainForm
         CType(Me.EssayQuesttblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrueFalsetblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QCMQuesttblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ExamsTypetblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -243,4 +280,8 @@ Partial Class MainForm
     Friend WithEvents TrueFalse_tblTableAdapter As ExamsGenerator_DBDataSetTableAdapters.TrueFalse_tblTableAdapter
     Friend WithEvents QCMQuesttblBindingSource As BindingSource
     Friend WithEvents QCMQuest_tblTableAdapter As ExamsGenerator_DBDataSetTableAdapters.QCMQuest_tblTableAdapter
+    Friend WithEvents ComboBox_ExamType As ComboBox
+    Friend WithEvents ExamsTypetblBindingSource As BindingSource
+    Friend WithEvents ExamsType_tblTableAdapter As ExamsGenerator_DBDataSetTableAdapters.ExamsType_tblTableAdapter
+    Friend WithEvents Label4 As Label
 End Class
