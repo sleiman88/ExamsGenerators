@@ -40,32 +40,33 @@ Partial Class GenerateAnExam
         Me.TextBox_TotalQCM = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox_ReqQCM = New System.Windows.Forms.TextBox()
-        Me.TextBox_ReqTF = New System.Windows.Forms.TextBox()
-        Me.TextBox_ReqEssay10 = New System.Windows.Forms.TextBox()
-        Me.TextBox_Req15 = New System.Windows.Forms.TextBox()
+        Me.Label_E20 = New System.Windows.Forms.Label()
+        Me.Label_E15 = New System.Windows.Forms.Label()
+        Me.Label_E10 = New System.Windows.Forms.Label()
+        Me.Label_TF = New System.Windows.Forms.Label()
+        Me.Label_QCM = New System.Windows.Forms.Label()
         Me.TextBox_Req20 = New System.Windows.Forms.TextBox()
+        Me.TextBox_Req15 = New System.Windows.Forms.TextBox()
+        Me.TextBox_ReqEssay10 = New System.Windows.Forms.TextBox()
+        Me.TextBox_ReqTF = New System.Windows.Forms.TextBox()
+        Me.TextBox_ReqQCM = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Button_Generate = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TextBox_TotalGrade = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label_QCM = New System.Windows.Forms.Label()
-        Me.Label_TF = New System.Windows.Forms.Label()
-        Me.Label_E10 = New System.Windows.Forms.Label()
-        Me.Label_E15 = New System.Windows.Forms.Label()
-        Me.Label_E20 = New System.Windows.Forms.Label()
         Me.EssayQuesttblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EssayQuest_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.EssayQuest_tblTableAdapter()
         Me.QCMQuesttblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.QCMQuest_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.QCMQuest_tblTableAdapter()
         Me.TrueFalsetblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TrueFalse_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.TrueFalse_tblTableAdapter()
+        Me.Label_TotalGrade = New System.Windows.Forms.Label()
         CType(Me.ExamsGenerator_DBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ExamsTypetblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -128,7 +129,7 @@ Partial Class GenerateAnExam
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(3, 36)
+        Me.Label4.Location = New System.Drawing.Point(3, 11)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(77, 13)
         Me.Label4.TabIndex = 4
@@ -137,7 +138,7 @@ Partial Class GenerateAnExam
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(3, 65)
+        Me.Label5.Location = New System.Drawing.Point(3, 40)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(77, 13)
         Me.Label5.TabIndex = 5
@@ -146,7 +147,7 @@ Partial Class GenerateAnExam
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(3, 13)
+        Me.Label6.Location = New System.Drawing.Point(3, 68)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(77, 13)
         Me.Label6.TabIndex = 6
@@ -155,7 +156,7 @@ Partial Class GenerateAnExam
         'TextBox_TotalEs10
         '
         Me.TextBox_TotalEs10.Enabled = False
-        Me.TextBox_TotalEs10.Location = New System.Drawing.Point(167, 36)
+        Me.TextBox_TotalEs10.Location = New System.Drawing.Point(167, 11)
         Me.TextBox_TotalEs10.Name = "TextBox_TotalEs10"
         Me.TextBox_TotalEs10.Size = New System.Drawing.Size(36, 20)
         Me.TextBox_TotalEs10.TabIndex = 7
@@ -163,7 +164,7 @@ Partial Class GenerateAnExam
         'TextBox_TotalEs15
         '
         Me.TextBox_TotalEs15.Enabled = False
-        Me.TextBox_TotalEs15.Location = New System.Drawing.Point(167, 65)
+        Me.TextBox_TotalEs15.Location = New System.Drawing.Point(167, 40)
         Me.TextBox_TotalEs15.Name = "TextBox_TotalEs15"
         Me.TextBox_TotalEs15.Size = New System.Drawing.Size(36, 20)
         Me.TextBox_TotalEs15.TabIndex = 8
@@ -171,7 +172,7 @@ Partial Class GenerateAnExam
         'TextBox_TotalEs20
         '
         Me.TextBox_TotalEs20.Enabled = False
-        Me.TextBox_TotalEs20.Location = New System.Drawing.Point(167, 10)
+        Me.TextBox_TotalEs20.Location = New System.Drawing.Point(167, 65)
         Me.TextBox_TotalEs20.Name = "TextBox_TotalEs20"
         Me.TextBox_TotalEs20.Size = New System.Drawing.Size(36, 20)
         Me.TextBox_TotalEs20.TabIndex = 9
@@ -202,8 +203,8 @@ Partial Class GenerateAnExam
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.TextBox_TotalEs15)
-        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.TextBox_TotalEs10)
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Location = New System.Drawing.Point(12, 52)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(392, 97)
@@ -231,41 +232,95 @@ Partial Class GenerateAnExam
         Me.Panel2.Size = New System.Drawing.Size(193, 161)
         Me.Panel2.TabIndex = 13
         '
-        'Label7
+        'Label_E20
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 15)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(30, 13)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "QCM"
+        Me.Label_E20.AutoSize = True
+        Me.Label_E20.ForeColor = System.Drawing.Color.Red
+        Me.Label_E20.Location = New System.Drawing.Point(135, 114)
+        Me.Label_E20.Name = "Label_E20"
+        Me.Label_E20.Size = New System.Drawing.Size(13, 13)
+        Me.Label_E20.TabIndex = 24
+        Me.Label_E20.Text = "*"
+        Me.Label_E20.Visible = False
         '
-        'Label8
+        'Label_E15
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 39)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(68, 13)
-        Me.Label8.TabIndex = 1
-        Me.Label8.Text = "True or false"
+        Me.Label_E15.AutoSize = True
+        Me.Label_E15.ForeColor = System.Drawing.Color.Red
+        Me.Label_E15.Location = New System.Drawing.Point(135, 88)
+        Me.Label_E15.Name = "Label_E15"
+        Me.Label_E15.Size = New System.Drawing.Size(13, 13)
+        Me.Label_E15.TabIndex = 23
+        Me.Label_E15.Text = "*"
+        Me.Label_E15.Visible = False
         '
-        'Label9
+        'Label_E10
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(6, 62)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(50, 13)
-        Me.Label9.TabIndex = 2
-        Me.Label9.Text = "Essay 10"
+        Me.Label_E10.AutoSize = True
+        Me.Label_E10.ForeColor = System.Drawing.Color.Red
+        Me.Label_E10.Location = New System.Drawing.Point(135, 69)
+        Me.Label_E10.Name = "Label_E10"
+        Me.Label_E10.Size = New System.Drawing.Size(13, 13)
+        Me.Label_E10.TabIndex = 22
+        Me.Label_E10.Text = "*"
+        Me.Label_E10.Visible = False
         '
-        'Label10
+        'Label_TF
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(6, 85)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(50, 13)
-        Me.Label10.TabIndex = 3
-        Me.Label10.Text = "Essay 15"
+        Me.Label_TF.AutoSize = True
+        Me.Label_TF.ForeColor = System.Drawing.Color.Red
+        Me.Label_TF.Location = New System.Drawing.Point(135, 44)
+        Me.Label_TF.Name = "Label_TF"
+        Me.Label_TF.Size = New System.Drawing.Size(13, 13)
+        Me.Label_TF.TabIndex = 21
+        Me.Label_TF.Text = "*"
+        Me.Label_TF.Visible = False
+        '
+        'Label_QCM
+        '
+        Me.Label_QCM.AutoSize = True
+        Me.Label_QCM.ForeColor = System.Drawing.Color.Red
+        Me.Label_QCM.Location = New System.Drawing.Point(135, 17)
+        Me.Label_QCM.Name = "Label_QCM"
+        Me.Label_QCM.Size = New System.Drawing.Size(13, 13)
+        Me.Label_QCM.TabIndex = 20
+        Me.Label_QCM.Text = "*"
+        Me.Label_QCM.Visible = False
+        '
+        'TextBox_Req20
+        '
+        Me.TextBox_Req20.Location = New System.Drawing.Point(92, 111)
+        Me.TextBox_Req20.Name = "TextBox_Req20"
+        Me.TextBox_Req20.Size = New System.Drawing.Size(36, 20)
+        Me.TextBox_Req20.TabIndex = 19
+        '
+        'TextBox_Req15
+        '
+        Me.TextBox_Req15.Location = New System.Drawing.Point(92, 85)
+        Me.TextBox_Req15.Name = "TextBox_Req15"
+        Me.TextBox_Req15.Size = New System.Drawing.Size(36, 20)
+        Me.TextBox_Req15.TabIndex = 18
+        '
+        'TextBox_ReqEssay10
+        '
+        Me.TextBox_ReqEssay10.Location = New System.Drawing.Point(92, 62)
+        Me.TextBox_ReqEssay10.Name = "TextBox_ReqEssay10"
+        Me.TextBox_ReqEssay10.Size = New System.Drawing.Size(36, 20)
+        Me.TextBox_ReqEssay10.TabIndex = 17
+        '
+        'TextBox_ReqTF
+        '
+        Me.TextBox_ReqTF.Location = New System.Drawing.Point(92, 37)
+        Me.TextBox_ReqTF.Name = "TextBox_ReqTF"
+        Me.TextBox_ReqTF.Size = New System.Drawing.Size(36, 20)
+        Me.TextBox_ReqTF.TabIndex = 16
+        '
+        'TextBox_ReqQCM
+        '
+        Me.TextBox_ReqQCM.Location = New System.Drawing.Point(92, 11)
+        Me.TextBox_ReqQCM.Name = "TextBox_ReqQCM"
+        Me.TextBox_ReqQCM.Size = New System.Drawing.Size(36, 20)
+        Me.TextBox_ReqQCM.TabIndex = 15
         '
         'Label11
         '
@@ -276,6 +331,42 @@ Partial Class GenerateAnExam
         Me.Label11.TabIndex = 4
         Me.Label11.Text = "Essay 20"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(6, 85)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(50, 13)
+        Me.Label10.TabIndex = 3
+        Me.Label10.Text = "Essay 15"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(6, 62)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(50, 13)
+        Me.Label9.TabIndex = 2
+        Me.Label9.Text = "Essay 10"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 39)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(68, 13)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "True or false"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(6, 15)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(30, 13)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "QCM"
+        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -284,41 +375,6 @@ Partial Class GenerateAnExam
         Me.Label12.Size = New System.Drawing.Size(104, 13)
         Me.Label12.TabIndex = 14
         Me.Label12.Text = "Required Questions "
-        '
-        'TextBox_ReqQCM
-        '
-        Me.TextBox_ReqQCM.Location = New System.Drawing.Point(92, 11)
-        Me.TextBox_ReqQCM.Name = "TextBox_ReqQCM"
-        Me.TextBox_ReqQCM.Size = New System.Drawing.Size(36, 20)
-        Me.TextBox_ReqQCM.TabIndex = 15
-        '
-        'TextBox_ReqTF
-        '
-        Me.TextBox_ReqTF.Location = New System.Drawing.Point(92, 37)
-        Me.TextBox_ReqTF.Name = "TextBox_ReqTF"
-        Me.TextBox_ReqTF.Size = New System.Drawing.Size(36, 20)
-        Me.TextBox_ReqTF.TabIndex = 16
-        '
-        'TextBox_ReqEssay10
-        '
-        Me.TextBox_ReqEssay10.Location = New System.Drawing.Point(92, 62)
-        Me.TextBox_ReqEssay10.Name = "TextBox_ReqEssay10"
-        Me.TextBox_ReqEssay10.Size = New System.Drawing.Size(36, 20)
-        Me.TextBox_ReqEssay10.TabIndex = 17
-        '
-        'TextBox_Req15
-        '
-        Me.TextBox_Req15.Location = New System.Drawing.Point(92, 85)
-        Me.TextBox_Req15.Name = "TextBox_Req15"
-        Me.TextBox_Req15.Size = New System.Drawing.Size(36, 20)
-        Me.TextBox_Req15.TabIndex = 18
-        '
-        'TextBox_Req20
-        '
-        Me.TextBox_Req20.Location = New System.Drawing.Point(92, 111)
-        Me.TextBox_Req20.Name = "TextBox_Req20"
-        Me.TextBox_Req20.Size = New System.Drawing.Size(36, 20)
-        Me.TextBox_Req20.TabIndex = 19
         '
         'Button_Generate
         '
@@ -348,6 +404,7 @@ Partial Class GenerateAnExam
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.Label_TotalGrade)
         Me.Panel3.Controls.Add(Me.TextBox_TotalGrade)
         Me.Panel3.Controls.Add(Me.Button_Generate)
         Me.Panel3.Controls.Add(Me.Label13)
@@ -355,61 +412,6 @@ Partial Class GenerateAnExam
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(338, 93)
         Me.Panel3.TabIndex = 18
-        '
-        'Label_QCM
-        '
-        Me.Label_QCM.AutoSize = True
-        Me.Label_QCM.ForeColor = System.Drawing.Color.Red
-        Me.Label_QCM.Location = New System.Drawing.Point(135, 17)
-        Me.Label_QCM.Name = "Label_QCM"
-        Me.Label_QCM.Size = New System.Drawing.Size(13, 13)
-        Me.Label_QCM.TabIndex = 20
-        Me.Label_QCM.Text = "*"
-        Me.Label_QCM.Visible = False
-        '
-        'Label_TF
-        '
-        Me.Label_TF.AutoSize = True
-        Me.Label_TF.ForeColor = System.Drawing.Color.Red
-        Me.Label_TF.Location = New System.Drawing.Point(135, 44)
-        Me.Label_TF.Name = "Label_TF"
-        Me.Label_TF.Size = New System.Drawing.Size(13, 13)
-        Me.Label_TF.TabIndex = 21
-        Me.Label_TF.Text = "*"
-        Me.Label_TF.Visible = False
-        '
-        'Label_E10
-        '
-        Me.Label_E10.AutoSize = True
-        Me.Label_E10.ForeColor = System.Drawing.Color.Red
-        Me.Label_E10.Location = New System.Drawing.Point(135, 69)
-        Me.Label_E10.Name = "Label_E10"
-        Me.Label_E10.Size = New System.Drawing.Size(13, 13)
-        Me.Label_E10.TabIndex = 22
-        Me.Label_E10.Text = "*"
-        Me.Label_E10.Visible = False
-        '
-        'Label_E15
-        '
-        Me.Label_E15.AutoSize = True
-        Me.Label_E15.ForeColor = System.Drawing.Color.Red
-        Me.Label_E15.Location = New System.Drawing.Point(135, 88)
-        Me.Label_E15.Name = "Label_E15"
-        Me.Label_E15.Size = New System.Drawing.Size(13, 13)
-        Me.Label_E15.TabIndex = 23
-        Me.Label_E15.Text = "*"
-        Me.Label_E15.Visible = False
-        '
-        'Label_E20
-        '
-        Me.Label_E20.AutoSize = True
-        Me.Label_E20.ForeColor = System.Drawing.Color.Red
-        Me.Label_E20.Location = New System.Drawing.Point(135, 114)
-        Me.Label_E20.Name = "Label_E20"
-        Me.Label_E20.Size = New System.Drawing.Size(13, 13)
-        Me.Label_E20.TabIndex = 24
-        Me.Label_E20.Text = "*"
-        Me.Label_E20.Visible = False
         '
         'EssayQuesttblBindingSource
         '
@@ -437,6 +439,17 @@ Partial Class GenerateAnExam
         'TrueFalse_tblTableAdapter
         '
         Me.TrueFalse_tblTableAdapter.ClearBeforeFill = True
+        '
+        'Label_TotalGrade
+        '
+        Me.Label_TotalGrade.AutoSize = True
+        Me.Label_TotalGrade.ForeColor = System.Drawing.Color.Red
+        Me.Label_TotalGrade.Location = New System.Drawing.Point(187, 18)
+        Me.Label_TotalGrade.Name = "Label_TotalGrade"
+        Me.Label_TotalGrade.Size = New System.Drawing.Size(13, 13)
+        Me.Label_TotalGrade.TabIndex = 21
+        Me.Label_TotalGrade.Text = "*"
+        Me.Label_TotalGrade.Visible = False
         '
         'GenerateAnExam
         '
@@ -510,4 +523,5 @@ Partial Class GenerateAnExam
     Friend WithEvents QCMQuest_tblTableAdapter As ExamsGenerator_DBDataSetTableAdapters.QCMQuest_tblTableAdapter
     Friend WithEvents TrueFalsetblBindingSource As BindingSource
     Friend WithEvents TrueFalse_tblTableAdapter As ExamsGenerator_DBDataSetTableAdapters.TrueFalse_tblTableAdapter
+    Friend WithEvents Label_TotalGrade As Label
 End Class
