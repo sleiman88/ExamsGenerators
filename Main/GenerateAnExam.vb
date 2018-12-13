@@ -26,7 +26,8 @@
 
             If checkTestNBquestion() = 0 Then
                 If checkGrade() = False Then
-                    'generate
+                    'generate  
+                    'getrandomID()
                 Else
                     MsgBox("Please choose total question in order to have grade over 100 !")
                 End If
@@ -39,7 +40,38 @@
             MsgBox("Please check required Informaitons ")
         End If
     End Sub
+    Private Function getrandomIdQcm() As Int32()
+        Dim reqQCm, reqTf, reqEs10, reqEs15, reqEs20 As Int32
+        reqQCm = Decimal.Parse(TextBox_ReqQCM.Text)
+        reqTf = Decimal.Parse(TextBox_ReqTF.Text)
+        reqEs10 = Decimal.Parse(TextBox_ReqEssay10.Text)
+        reqEs15 = Decimal.Parse(TextBox_Req15.Text)
+        reqEs20 = Decimal.Parse(TextBox_Req20.Text)
+        Dim QCmTbl(20) As Int32
+        Dim TFTbl(20) As Int32
+        Dim E10Tbl(10) As Int32
+        Dim E15Tbl(7) As Int32
+        Dim E20Tbl(5) As Int32
+        Dim DtableQcm As DataTable
 
+        ' DtableQcm = ExamsGenerator_DBDataSet.Tables("QCMQuest_tbl")
+        ExamsGenerator_DBDataSet.EnforceConstraints = False
+        Me.QCMQuest_tblTableAdapter.FillByRandom(Me.ExamsGenerator_DBDataSet.QCMQuest_tbl, 4, 1)
+        DtableQcm = ExamsGenerator_DBDataSet.Tables("QCMQuest_tbl")
+        If DtableQcm IsNot Nothing AndAlso DtableQcm.Rows.Count > 0 Then
+            ' result = DtableQcm.Rows(0)("ID")
+            For i As Integer = 0 To reqQCm - 1
+                QCmTbl(i) = DtableQcm.Rows(i)("ID")
+                '  MsgBox("row " + i.ToString + "=" + DtableQcm.Rows(i)("ID").ToString)
+            Next
+        End If
+        'Dim temp As String
+        'For i As Integer = 0 To reqQCm - 1
+        '    temp += QCmTbl(i).ToString
+        'Next
+        'MsgBox(temp)
+        Return QCmTbl
+    End Function
     Private Function checkGrade() As Boolean
         Dim totalGrade As Decimal
         totalGrade = Decimal.Parse(TextBox_ReqQCM.Text) * 5 + Decimal.Parse(TextBox_ReqTF.Text) * 5 + Decimal.Parse(TextBox_ReqEssay10.Text) * 10 + Decimal.Parse(TextBox_Req15.Text) * 15 + Decimal.Parse(TextBox_Req20.Text) * 20
@@ -147,6 +179,42 @@
     Private Sub TextBox_Req20_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBox_Req20.KeyUp
         If TextBox_Req20.Text <> String.Empty Then
             Label_E20.Visible = False
+        End If
+    End Sub
+
+    Private Sub TextBox_ReqTF_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox_ReqTF.KeyPress
+        If Not Char.IsNumber(e.KeyChar) And e.KeyChar <> ChrW(Keys.Back) Then
+            MsgBox("only Numbers allowed")
+            Label_TF.Visible = True
+            e.Handled = True
+
+        End If
+    End Sub
+
+    Private Sub TextBox_ReqEssay10_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox_ReqEssay10.KeyPress
+        If Not Char.IsNumber(e.KeyChar) And e.KeyChar <> ChrW(Keys.Back) Then
+            MsgBox("only Numbers allowed")
+            Label_E10.Visible = True
+            e.Handled = True
+
+        End If
+    End Sub
+
+    Private Sub TextBox_Req15_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox_Req15.KeyPress
+        If Not Char.IsNumber(e.KeyChar) And e.KeyChar <> ChrW(Keys.Back) Then
+            MsgBox("only Numbers allowed")
+            Label_E15.Visible = True
+            e.Handled = True
+
+        End If
+    End Sub
+
+    Private Sub TextBox_Req20_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox_Req20.KeyPress
+        If Not Char.IsNumber(e.KeyChar) And e.KeyChar <> ChrW(Keys.Back) Then
+            MsgBox("only Numbers allowed")
+            Label_E20.Visible = True
+            e.Handled = True
+
         End If
     End Sub
 End Class
