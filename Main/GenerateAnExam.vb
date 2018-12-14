@@ -27,7 +27,11 @@
             If checkTestNBquestion() = 0 Then
                 If checkGrade() = False Then
                     'generate  
-                    'getrandomID()
+                    getrandomIdQcm()
+                    getrandomIdTF()
+                    getrandomIdEs10()
+                    getrandomIdEs15()
+                    getrandomIdEs20()
                 Else
                     MsgBox("Please choose total question in order to have grade over 100 !")
                 End If
@@ -41,22 +45,16 @@
         End If
     End Sub
     Private Function getrandomIdQcm() As Int32()
-        Dim reqQCm, reqTf, reqEs10, reqEs15, reqEs20 As Int32
+        Dim reqQCm As Int32
         reqQCm = Decimal.Parse(TextBox_ReqQCM.Text)
-        reqTf = Decimal.Parse(TextBox_ReqTF.Text)
-        reqEs10 = Decimal.Parse(TextBox_ReqEssay10.Text)
-        reqEs15 = Decimal.Parse(TextBox_Req15.Text)
-        reqEs20 = Decimal.Parse(TextBox_Req20.Text)
+
         Dim QCmTbl(20) As Int32
-        Dim TFTbl(20) As Int32
-        Dim E10Tbl(10) As Int32
-        Dim E15Tbl(7) As Int32
-        Dim E20Tbl(5) As Int32
+
         Dim DtableQcm As DataTable
 
         ' DtableQcm = ExamsGenerator_DBDataSet.Tables("QCMQuest_tbl")
         ExamsGenerator_DBDataSet.EnforceConstraints = False
-        Me.QCMQuest_tblTableAdapter.FillByRandom(Me.ExamsGenerator_DBDataSet.QCMQuest_tbl, 4, 1)
+        Me.QCMQuest_tblTableAdapter.FillByRandom(Me.ExamsGenerator_DBDataSet.QCMQuest_tbl, reqQCm, ExamType)
         DtableQcm = ExamsGenerator_DBDataSet.Tables("QCMQuest_tbl")
         If DtableQcm IsNot Nothing AndAlso DtableQcm.Rows.Count > 0 Then
             ' result = DtableQcm.Rows(0)("ID")
@@ -72,6 +70,124 @@
         'MsgBox(temp)
         Return QCmTbl
     End Function
+    Private Function getrandomIdTF() As Int32()
+        Dim reqTf As Int32
+
+        reqTf = Decimal.Parse(TextBox_ReqTF.Text)
+
+
+        Dim TFTbl(20) As Int32
+
+        Dim DtableTF As DataTable
+
+        ' DtableQcm = ExamsGenerator_DBDataSet.Tables("QCMQuest_tbl")
+        ExamsGenerator_DBDataSet.EnforceConstraints = False
+        Me.TrueFalse_tblTableAdapter.FillByRandom(Me.ExamsGenerator_DBDataSet.TrueFalse_tbl, reqTf, ExamType)
+
+        DtableTF = ExamsGenerator_DBDataSet.Tables("TrueFalse_tbl")
+        If DtableTF IsNot Nothing AndAlso DtableTF.Rows.Count > 0 Then
+            ' result = DtableQcm.Rows(0)("ID")
+            For i As Integer = 0 To reqTf - 1
+                TFTbl(i) = DtableTF.Rows(i)("ID")
+                '  MsgBox("row " + i.ToString + "=" + DtableQcm.Rows(i)("ID").ToString)
+            Next
+        End If
+        'Dim temp As String
+        'For i As Integer = 0 To reqTf - 1
+        '    temp += TFTbl(i).ToString
+        'Next
+        'MsgBox(temp)
+        Return TFTbl
+    End Function
+    Private Function getrandomIdEs10() As Int32()
+        Dim reqEs10 As Int32
+
+        reqEs10 = Decimal.Parse(TextBox_ReqEssay10.Text)
+
+
+        Dim E10Tbl(10) As Int32
+
+        Dim DtableEs10 As DataTable
+
+        ' DtableQcm = ExamsGenerator_DBDataSet.Tables("QCMQuest_tbl")
+        ExamsGenerator_DBDataSet.EnforceConstraints = False
+        Me.EssayQuest_tblTableAdapter.FillByrandom10(Me.ExamsGenerator_DBDataSet.EssayQuest_tbl, reqEs10, ExamType)
+
+        DtableEs10 = ExamsGenerator_DBDataSet.Tables("EssayQuest_tbl")
+        If DtableEs10 IsNot Nothing AndAlso DtableEs10.Rows.Count > 0 Then
+            ' result = DtableQcm.Rows(0)("ID")
+            For i As Integer = 0 To reqEs10 - 1
+                E10Tbl(i) = DtableEs10.Rows(i)("ID")
+                '  MsgBox("row " + i.ToString + "=" + DtableQcm.Rows(i)("ID").ToString)
+            Next
+        End If
+        'Dim temp As String
+        'For i As Integer = 0 To reqEs10 - 1
+        '    temp += E10Tbl(i).ToString
+        'Next
+        'MsgBox(temp)
+        Return E10Tbl
+    End Function
+    Private Function getrandomIdEs15() As Int32()
+        Dim reqEs15 As Int32
+
+        reqEs15 = Decimal.Parse(TextBox_Req15.Text)
+
+
+        Dim E15Tbl(7) As Int32
+
+        Dim DtableEs15 As DataTable
+
+        ' DtableQcm = ExamsGenerator_DBDataSet.Tables("QCMQuest_tbl")
+        ExamsGenerator_DBDataSet.EnforceConstraints = False
+        Me.EssayQuest_tblTableAdapter.FillByRandom15(Me.ExamsGenerator_DBDataSet.EssayQuest_tbl, reqEs15, ExamType)
+
+        DtableEs15 = ExamsGenerator_DBDataSet.Tables("EssayQuest_tbl")
+        If DtableEs15 IsNot Nothing AndAlso DtableEs15.Rows.Count > 0 Then
+            ' result = DtableQcm.Rows(0)("ID")
+            For i As Integer = 0 To reqEs15 - 1
+                E15Tbl(i) = DtableEs15.Rows(i)("ID")
+                '  MsgBox("row " + i.ToString + "=" + DtableQcm.Rows(i)("ID").ToString)
+            Next
+        End If
+        'Dim temp As String
+        'For i As Integer = 0 To reqEs15 - 1
+        '    temp += E15Tbl(i).ToString
+        'Next
+        'MsgBox(temp)
+        Return E15Tbl
+    End Function
+    Private Function getrandomIdEs20() As Int32()
+        Dim reqEs20 As Int32
+
+        reqEs20 = Decimal.Parse(TextBox_Req20.Text)
+
+
+        Dim E20Tbl(5) As Int32
+
+        Dim DtableEs20 As DataTable
+
+        ' DtableQcm = ExamsGenerator_DBDataSet.Tables("QCMQuest_tbl")
+        ExamsGenerator_DBDataSet.EnforceConstraints = False
+        Me.EssayQuest_tblTableAdapter.FillByRandom15(Me.ExamsGenerator_DBDataSet.EssayQuest_tbl, reqEs20, ExamType)
+
+        DtableEs20 = ExamsGenerator_DBDataSet.Tables("EssayQuest_tbl")
+        If DtableEs20 IsNot Nothing AndAlso DtableEs20.Rows.Count > 0 Then
+            ' result = DtableQcm.Rows(0)("ID")
+            For i As Integer = 0 To reqEs20 - 1
+                E20Tbl(i) = DtableEs20.Rows(i)("ID")
+                '  MsgBox("row " + i.ToString + "=" + DtableQcm.Rows(i)("ID").ToString)
+            Next
+        End If
+        'Dim temp As String
+        'For i As Integer = 0 To reqEs20 - 1
+        '    temp += E20Tbl(i).ToString
+        'Next
+        'MsgBox(temp)
+        Return E20Tbl
+    End Function
+
+
     Private Function checkGrade() As Boolean
         Dim totalGrade As Decimal
         totalGrade = Decimal.Parse(TextBox_ReqQCM.Text) * 5 + Decimal.Parse(TextBox_ReqTF.Text) * 5 + Decimal.Parse(TextBox_ReqEssay10.Text) * 10 + Decimal.Parse(TextBox_Req15.Text) * 15 + Decimal.Parse(TextBox_Req20.Text) * 20
