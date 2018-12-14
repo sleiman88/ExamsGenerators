@@ -60,13 +60,20 @@ Partial Class GenerateAnExam
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TextBox_TotalGrade = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label_ExamName = New System.Windows.Forms.Label()
+        Me.TextBox_ExamName = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label_TotalGrade = New System.Windows.Forms.Label()
         Me.EssayQuesttblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EssayQuest_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.EssayQuest_tblTableAdapter()
         Me.QCMQuesttblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.QCMQuest_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.QCMQuest_tblTableAdapter()
         Me.TrueFalsetblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TrueFalse_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.TrueFalse_tblTableAdapter()
-        Me.Label_TotalGrade = New System.Windows.Forms.Label()
+        Me.ExamstblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Exams_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.Exams_tblTableAdapter()
+        Me.ExamsQuestionstblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ExamsQuestions_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.ExamsQuestions_tblTableAdapter()
         CType(Me.ExamsGenerator_DBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ExamsTypetblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -75,6 +82,8 @@ Partial Class GenerateAnExam
         CType(Me.EssayQuesttblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QCMQuesttblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrueFalsetblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ExamstblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ExamsQuestionstblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -378,7 +387,7 @@ Partial Class GenerateAnExam
         '
         'Button_Generate
         '
-        Me.Button_Generate.Location = New System.Drawing.Point(177, 55)
+        Me.Button_Generate.Location = New System.Drawing.Point(240, 60)
         Me.Button_Generate.Name = "Button_Generate"
         Me.Button_Generate.Size = New System.Drawing.Size(75, 23)
         Me.Button_Generate.TabIndex = 15
@@ -404,6 +413,9 @@ Partial Class GenerateAnExam
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.Label_ExamName)
+        Me.Panel3.Controls.Add(Me.TextBox_ExamName)
+        Me.Panel3.Controls.Add(Me.Label14)
         Me.Panel3.Controls.Add(Me.Label_TotalGrade)
         Me.Panel3.Controls.Add(Me.TextBox_TotalGrade)
         Me.Panel3.Controls.Add(Me.Button_Generate)
@@ -412,6 +424,44 @@ Partial Class GenerateAnExam
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(338, 93)
         Me.Panel3.TabIndex = 18
+        '
+        'Label_ExamName
+        '
+        Me.Label_ExamName.AutoSize = True
+        Me.Label_ExamName.ForeColor = System.Drawing.Color.Red
+        Me.Label_ExamName.Location = New System.Drawing.Point(187, 55)
+        Me.Label_ExamName.Name = "Label_ExamName"
+        Me.Label_ExamName.Size = New System.Drawing.Size(13, 13)
+        Me.Label_ExamName.TabIndex = 24
+        Me.Label_ExamName.Text = "*"
+        Me.Label_ExamName.Visible = False
+        '
+        'TextBox_ExamName
+        '
+        Me.TextBox_ExamName.Location = New System.Drawing.Point(81, 48)
+        Me.TextBox_ExamName.Name = "TextBox_ExamName"
+        Me.TextBox_ExamName.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_ExamName.TabIndex = 23
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(12, 51)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(66, 13)
+        Me.Label14.TabIndex = 22
+        Me.Label14.Text = "Exam Name "
+        '
+        'Label_TotalGrade
+        '
+        Me.Label_TotalGrade.AutoSize = True
+        Me.Label_TotalGrade.ForeColor = System.Drawing.Color.Red
+        Me.Label_TotalGrade.Location = New System.Drawing.Point(187, 18)
+        Me.Label_TotalGrade.Name = "Label_TotalGrade"
+        Me.Label_TotalGrade.Size = New System.Drawing.Size(13, 13)
+        Me.Label_TotalGrade.TabIndex = 21
+        Me.Label_TotalGrade.Text = "*"
+        Me.Label_TotalGrade.Visible = False
         '
         'EssayQuesttblBindingSource
         '
@@ -440,16 +490,23 @@ Partial Class GenerateAnExam
         '
         Me.TrueFalse_tblTableAdapter.ClearBeforeFill = True
         '
-        'Label_TotalGrade
+        'ExamstblBindingSource
         '
-        Me.Label_TotalGrade.AutoSize = True
-        Me.Label_TotalGrade.ForeColor = System.Drawing.Color.Red
-        Me.Label_TotalGrade.Location = New System.Drawing.Point(187, 18)
-        Me.Label_TotalGrade.Name = "Label_TotalGrade"
-        Me.Label_TotalGrade.Size = New System.Drawing.Size(13, 13)
-        Me.Label_TotalGrade.TabIndex = 21
-        Me.Label_TotalGrade.Text = "*"
-        Me.Label_TotalGrade.Visible = False
+        Me.ExamstblBindingSource.DataMember = "Exams_tbl"
+        Me.ExamstblBindingSource.DataSource = Me.ExamsGenerator_DBDataSet
+        '
+        'Exams_tblTableAdapter
+        '
+        Me.Exams_tblTableAdapter.ClearBeforeFill = True
+        '
+        'ExamsQuestionstblBindingSource
+        '
+        Me.ExamsQuestionstblBindingSource.DataMember = "ExamsQuestions_tbl"
+        Me.ExamsQuestionstblBindingSource.DataSource = Me.ExamsGenerator_DBDataSet
+        '
+        'ExamsQuestions_tblTableAdapter
+        '
+        Me.ExamsQuestions_tblTableAdapter.ClearBeforeFill = True
         '
         'GenerateAnExam
         '
@@ -475,6 +532,8 @@ Partial Class GenerateAnExam
         CType(Me.EssayQuesttblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QCMQuesttblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrueFalsetblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ExamstblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ExamsQuestionstblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -524,4 +583,11 @@ Partial Class GenerateAnExam
     Friend WithEvents TrueFalsetblBindingSource As BindingSource
     Friend WithEvents TrueFalse_tblTableAdapter As ExamsGenerator_DBDataSetTableAdapters.TrueFalse_tblTableAdapter
     Friend WithEvents Label_TotalGrade As Label
+    Friend WithEvents Label_ExamName As Label
+    Friend WithEvents TextBox_ExamName As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents ExamstblBindingSource As BindingSource
+    Friend WithEvents Exams_tblTableAdapter As ExamsGenerator_DBDataSetTableAdapters.Exams_tblTableAdapter
+    Friend WithEvents ExamsQuestionstblBindingSource As BindingSource
+    Friend WithEvents ExamsQuestions_tblTableAdapter As ExamsGenerator_DBDataSetTableAdapters.ExamsQuestions_tblTableAdapter
 End Class

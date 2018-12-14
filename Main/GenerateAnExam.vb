@@ -9,6 +9,10 @@
 
     End Sub
     Private Sub GenerateAnExam_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'ExamsGenerator_DBDataSet.ExamsQuestions_tbl' table. You can move, or remove it, as needed.
+
+        'TODO: This line of code loads data into the 'ExamsGenerator_DBDataSet.Exams_tbl' table. You can move, or remove it, as needed.
+
 
         TextBox_Examtype.Text = Me.ExamsType_tblTableAdapter.getName(ExamType)
         getTotal()
@@ -27,11 +31,17 @@
             If checkTestNBquestion() = 0 Then
                 If checkGrade() = False Then
                     'generate  
-                    getrandomIdQcm()
-                    getrandomIdTF()
-                    getrandomIdEs10()
-                    getrandomIdEs15()
-                    getrandomIdEs20()
+                    Try
+                        insertNewExam()
+
+                        insertQuestions(getExamID(), getrandomIdQcm(), getrandomIdTF(), getrandomIdEs10(), getrandomIdEs15(), getrandomIdEs20())
+                        'show report 
+                        MsgBox("Succefuly addded ")
+                    Catch ex As Exception
+                        MsgBox(ex.Message)
+                    End Try
+
+
                 Else
                     MsgBox("Please choose total question in order to have grade over 100 !")
                 End If
@@ -44,6 +54,31 @@
             MsgBox("Please check required Informaitons ")
         End If
     End Sub
+    Private Sub insertNewExam()
+        Me.Exams_tblTableAdapter.InsertQuery(TextBox_ExamName.Text, ExamType, Today())
+    End Sub
+    Private Sub insertQuestions(ExamId As Int32, QCm As Int32(), Tf As Int32(), Es10 As Int32(), Es15 As Int32(), Es20 As Int32())
+
+        For i As Integer = 0 To Decimal.Parse(TextBox_ReqQCM.Text) - 1
+            Me.ExamsQuestions_tblTableAdapter.InsertQuery(ExamId, QCm(i), "QCM")
+        Next
+
+        For i As Integer = 0 To Decimal.Parse(TextBox_ReqTF.Text) - 1
+            Me.ExamsQuestions_tblTableAdapter.InsertQuery(ExamId, Tf(i), "TrueOrFalse")
+        Next
+
+        For i As Integer = 0 To Decimal.Parse(TextBox_ReqEssay10.Text) - 1
+            Me.ExamsQuestions_tblTableAdapter.InsertQuery(ExamId, Es10(i), "Essay10")
+        Next
+        For i As Integer = 0 To Decimal.Parse(TextBox_Req15.Text) - 1
+            Me.ExamsQuestions_tblTableAdapter.InsertQuery(ExamId, Es15(i), "Essay15")
+        Next
+        For i As Integer = 0 To Decimal.Parse(TextBox_Req20.Text) - 1
+            Me.ExamsQuestions_tblTableAdapter.InsertQuery(ExamId, Es20(i), "Essay20")
+        Next
+
+    End Sub
+
     Private Function getrandomIdQcm() As Int32()
         Dim reqQCm As Int32
         reqQCm = Decimal.Parse(TextBox_ReqQCM.Text)
@@ -186,7 +221,9 @@
         'MsgBox(temp)
         Return E20Tbl
     End Function
-
+    Private Function getExamID()
+        Return Me.Exams_tblTableAdapter.getExamId()
+    End Function
 
     Private Function checkGrade() As Boolean
         Dim totalGrade As Decimal
@@ -251,6 +288,11 @@
 
         If TextBox_ReqTF.Text = String.Empty Then
             Label_TF.Visible = True
+            result += 1
+        End If
+
+        If TextBox_ExamName.Text = String.Empty Then
+            Label_ExamName.Visible = True
             result += 1
         End If
 
@@ -331,6 +373,12 @@
             Label_E20.Visible = True
             e.Handled = True
 
+        End If
+    End Sub
+
+    Private Sub TextBox_ExamName_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBox_ExamName.KeyUp
+        If TextBox_ExamName.Text <> String.Empty Then
+            Label_ExamName.Visible = False
         End If
     End Sub
 End Class

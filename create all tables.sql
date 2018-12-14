@@ -47,11 +47,11 @@ CREATE TABLE [dbo].[EssayQuest_tbl](
 
 
 CREATE TABLE [dbo].[ExamsQuestions_tbl](
-	[Id_ExamsQuestions] int IDENTITY(1,1) PRIMARY KEY,
-	[Id_Exams_ExamsQuestions] [numeric](18, 0) NULL,
-	[Id_TrueFalseQuest_ExamsQuestions] [numeric](18, 0) NULL,
-	[Id_QCMQuest_ExamsQuestions] [numeric](18, 0) NULL,
-	[Id_EssayQuest_ExamsQuestions] [numeric](18, 0) NULL)
+	[IdBigId_ExamsQuestions] int IDENTITY(1,1) PRIMARY KEY,
+	[Id_Exams_ExamsQuestions][numeric](18, 0) NULL,
+	[Id_Quest_ExamsQuestions] [numeric](18, 0) NULL,
+	[QuestionType_ExamsQuestions] [varchar](50) NULL,)
+
  
 
 
