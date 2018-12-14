@@ -37,6 +37,7 @@
                         insertQuestions(getExamID(), getrandomIdQcm(), getrandomIdTF(), getrandomIdEs10(), getrandomIdEs15(), getrandomIdEs20())
                         'show report 
                         MsgBox("Succefuly addded ")
+
                     Catch ex As Exception
                         MsgBox(ex.Message)
                     End Try
