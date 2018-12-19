@@ -104,6 +104,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ExamsGenerator_DBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ExamsGenerator_DBDataSet.vb">
+      <DependentUpon>ExamsGenerator_DBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GenerateAnExam.Designer.vb">
       <DependentUpon>GenerateAnExam.vb</DependentUpon>
     </Compile>
@@ -130,6 +133,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="OldExam.Designer.vb">
+      <DependentUpon>OldExam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OldExam.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="PrintExam.Designer.vb">
       <DependentUpon>PrintExam.vb</DependentUpon>
@@ -162,6 +171,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OldExam.resx">
+      <DependentUpon>OldExam.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintExam.resx">
       <DependentUpon>PrintExam.vb</DependentUpon>

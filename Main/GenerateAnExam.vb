@@ -33,10 +33,15 @@
                     'generate  
                     Try
                         insertNewExam()
-
-                        insertQuestions(getExamID(), getrandomIdQcm(), getrandomIdTF(), getrandomIdEs10(), getrandomIdEs15(), getrandomIdEs20())
+                        Dim temp As Integer
+                        temp = getExamID()
+                        insertQuestions(temp, getrandomIdQcm(), getrandomIdTF(), getrandomIdEs10(), getrandomIdEs15(), getrandomIdEs20())
                         'show report 
-                        MsgBox("Succefuly addded ")
+
+                        Dim newRepo As PrintExam
+                        newRepo = New PrintExam(temp)
+                        newRepo.ShowDialog()
+
 
                     Catch ex As Exception
                         MsgBox(ex.Message)
@@ -222,7 +227,8 @@
         'MsgBox(temp)
         Return E20Tbl
     End Function
-    Private Function getExamID()
+    Private Function getExamID() As Int32
+
         Return Me.Exams_tblTableAdapter.getExamId()
     End Function
 
@@ -257,23 +263,23 @@
     Private Function checkTestNBquestion() As Decimal
         Dim result As Decimal
         result = 0
-        If Decimal.Parse(TextBox_ReqQCM.Text) > Decimal.Parse(TextBox_TotalQCM.Text) Then
+        If Decimal.Parse(TextBox_ReqQCM.Text) > Decimal.Parse(TextBox_TotalQCM.Text) Or Decimal.Parse(TextBox_ReqQCM.Text) > 5 Then
             Label_QCM.Visible = True
             result += 1
         End If
-        If Decimal.Parse(TextBox_ReqTF.Text) > Decimal.Parse(TextBox_TotalTF.Text) Then
+        If Decimal.Parse(TextBox_ReqTF.Text) > Decimal.Parse(TextBox_TotalTF.Text) Or Decimal.Parse(TextBox_ReqTF.Text) > 10 Then
             Label_TF.Visible = True
             result += 1
         End If
-        If Decimal.Parse(TextBox_ReqEssay10.Text) > Decimal.Parse(TextBox_TotalEs10.Text) Then
+        If Decimal.Parse(TextBox_ReqEssay10.Text) > Decimal.Parse(TextBox_TotalEs10.Text) Or Decimal.Parse(TextBox_ReqEssay10.Text) > 3 Then
             Label_TF.Visible = True
             result += 1
         End If
-        If Decimal.Parse(TextBox_Req15.Text) > Decimal.Parse(TextBox_TotalEs15.Text) Then
+        If Decimal.Parse(TextBox_Req15.Text) > Decimal.Parse(TextBox_TotalEs15.Text) Or Decimal.Parse(TextBox_Req15.Text) > 3 Then
             Label_E15.Visible = True
             result += 1
         End If
-        If Decimal.Parse(TextBox_Req20.Text) > Decimal.Parse(TextBox_TotalEs20.Text) Then
+        If Decimal.Parse(TextBox_Req20.Text) > Decimal.Parse(TextBox_TotalEs20.Text) Or Decimal.Parse(TextBox_Req20.Text) > 3 Then
             Label_E20.Visible = True
             result += 1
         End If
@@ -382,4 +388,6 @@
             Label_ExamName.Visible = False
         End If
     End Sub
+
+
 End Class

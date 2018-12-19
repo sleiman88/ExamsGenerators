@@ -255,7 +255,7 @@ SELECT Id_Exams, Name_Exams, Id_ExamsType_Exams, Date_Exams FROM Exams_tbl WHERE
               <Mapping SourceColumn="Date_Exams" DataSetColumn="Date_Exams" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ExamsGenerator_DBConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="getExamId" Modifier="Public" Name="getExamId" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="getExamId">
+              <DbSource ConnectionRef="ExamsGenerator_DBConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="getExamId" Modifier="Public" Name="getExamId" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="getExamId">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        MAX(Id_Exams) AS ExamId
@@ -264,7 +264,7 @@ FROM            Exams_tbl</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ExamsGenerator_DBConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="ExamsGenerator_DBConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Exams_tbl
@@ -709,6 +709,165 @@ SELECT IdBigId_ExamsQuestions, Id_Exams_ExamsQuestions, Id_Quest_ExamsQuestions,
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getQCMQuesTableAdapter" GeneratorDataComponentClassName="getQCMQuesTableAdapter" Name="getQCMQues" UserDataComponentName="getQCMQuesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ExamsGenerator_DBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ExamsType_tbl.Name_ExamsType, Exams_tbl.Date_Exams, Exams_tbl.Name_Exams, QCMQuest_tbl.Quest_QCMQuest, QCMQuest_tbl.ChoiceA_QCMQuest, QCMQuest_tbl.ChoiceB_QCMQuest, 
+                         QCMQuest_tbl.ChoiceC_QCMQuest, QCMQuest_tbl.ChoiceD_QCMQuest
+FROM            ExamsQuestions_tbl INNER JOIN
+                         Exams_tbl ON ExamsQuestions_tbl.Id_Exams_ExamsQuestions = Exams_tbl.Id_Exams INNER JOIN
+                         ExamsType_tbl ON Exams_tbl.Id_ExamsType_Exams = ExamsType_tbl.Id_ExamsType INNER JOIN
+                         QCMQuest_tbl ON ExamsQuestions_tbl.Id_Quest_ExamsQuestions = QCMQuest_tbl.Id_QCMQuest
+WHERE        (ExamsQuestions_tbl.QuestionType_ExamsQuestions = 'QCM')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name_ExamsType" DataSetColumn="Name_ExamsType" />
+              <Mapping SourceColumn="Date_Exams" DataSetColumn="Date_Exams" />
+              <Mapping SourceColumn="Name_Exams" DataSetColumn="Name_Exams" />
+              <Mapping SourceColumn="Quest_QCMQuest" DataSetColumn="Quest_QCMQuest" />
+              <Mapping SourceColumn="ChoiceA_QCMQuest" DataSetColumn="ChoiceA_QCMQuest" />
+              <Mapping SourceColumn="ChoiceB_QCMQuest" DataSetColumn="ChoiceB_QCMQuest" />
+              <Mapping SourceColumn="ChoiceC_QCMQuest" DataSetColumn="ChoiceC_QCMQuest" />
+              <Mapping SourceColumn="ChoiceD_QCMQuest" DataSetColumn="ChoiceD_QCMQuest" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ExamsGenerator_DBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByExamID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByExamID" GeneratorSourceName="FillByExamID" GetMethodModifier="Public" GetMethodName="GetDataByExamID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByExamID" UserSourceName="FillByExamID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ExamsType_tbl.Name_ExamsType, Exams_tbl.Date_Exams, Exams_tbl.Name_Exams, QCMQuest_tbl.Quest_QCMQuest, QCMQuest_tbl.ChoiceA_QCMQuest, QCMQuest_tbl.ChoiceB_QCMQuest, 
+                         QCMQuest_tbl.ChoiceC_QCMQuest, QCMQuest_tbl.ChoiceD_QCMQuest
+FROM            ExamsQuestions_tbl INNER JOIN
+                         Exams_tbl ON ExamsQuestions_tbl.Id_Exams_ExamsQuestions = Exams_tbl.Id_Exams INNER JOIN
+                         ExamsType_tbl ON Exams_tbl.Id_ExamsType_Exams = ExamsType_tbl.Id_ExamsType INNER JOIN
+                         QCMQuest_tbl ON ExamsQuestions_tbl.Id_Quest_ExamsQuestions = QCMQuest_tbl.Id_QCMQuest
+WHERE        (ExamsQuestions_tbl.QuestionType_ExamsQuestions = 'QCM') AND (Exams_tbl.Id_Exams = @ExamID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ExamID" ColumnName="Id_Exams" DataSourceName="ExamsGenerator_DB.dbo.Exams_tbl" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ExamID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id_Exams" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getTrueFQuesTableAdapter" GeneratorDataComponentClassName="getTrueFQuesTableAdapter" Name="getTrueFQues" UserDataComponentName="getTrueFQuesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ExamsGenerator_DBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TrueFalse_tbl.Quest_TrueFalseQuest, Exams_tbl.Name_Exams, Exams_tbl.Date_Exams, ExamsType_tbl.Name_ExamsType, TrueFalse_tbl.Answer_TrueFalseQuest
+FROM            ExamsQuestions_tbl INNER JOIN
+                         TrueFalse_tbl ON ExamsQuestions_tbl.Id_Quest_ExamsQuestions = TrueFalse_tbl.Id_TrueFalseQuest INNER JOIN
+                         Exams_tbl ON ExamsQuestions_tbl.Id_Exams_ExamsQuestions = Exams_tbl.Id_Exams INNER JOIN
+                         ExamsType_tbl ON Exams_tbl.Id_ExamsType_Exams = ExamsType_tbl.Id_ExamsType
+WHERE        (ExamsQuestions_tbl.QuestionType_ExamsQuestions = 'TrueorFalse')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Quest_TrueFalseQuest" DataSetColumn="Quest_TrueFalseQuest" />
+              <Mapping SourceColumn="Name_Exams" DataSetColumn="Name_Exams" />
+              <Mapping SourceColumn="Date_Exams" DataSetColumn="Date_Exams" />
+              <Mapping SourceColumn="Name_ExamsType" DataSetColumn="Name_ExamsType" />
+              <Mapping SourceColumn="Answer_TrueFalseQuest" DataSetColumn="Answer_TrueFalseQuest" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ExamsGenerator_DBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByExamID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByExamID" GeneratorSourceName="FillByExamID" GetMethodModifier="Public" GetMethodName="GetDataByExamID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByExamID" UserSourceName="FillByExamID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TrueFalse_tbl.Quest_TrueFalseQuest, Exams_tbl.Name_Exams, Exams_tbl.Date_Exams, ExamsType_tbl.Name_ExamsType, TrueFalse_tbl.Answer_TrueFalseQuest
+FROM            ExamsQuestions_tbl INNER JOIN
+                         TrueFalse_tbl ON ExamsQuestions_tbl.Id_Quest_ExamsQuestions = TrueFalse_tbl.Id_TrueFalseQuest INNER JOIN
+                         Exams_tbl ON ExamsQuestions_tbl.Id_Exams_ExamsQuestions = Exams_tbl.Id_Exams INNER JOIN
+                         ExamsType_tbl ON Exams_tbl.Id_ExamsType_Exams = ExamsType_tbl.Id_ExamsType
+WHERE        (ExamsQuestions_tbl.QuestionType_ExamsQuestions = 'TrueorFalse') AND (Exams_tbl.Id_Exams = @ExamID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ExamID" ColumnName="Id_Exams" DataSourceName="ExamsGenerator_DB.dbo.Exams_tbl" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ExamID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id_Exams" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getEssayQuesTableAdapter" GeneratorDataComponentClassName="getEssayQuesTableAdapter" Name="getEssayQues" UserDataComponentName="getEssayQuesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ExamsGenerator_DBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ExamsType_tbl.Name_ExamsType, Exams_tbl.Date_Exams, ExamsQuestions_tbl.QuestionType_ExamsQuestions, EssayQuest_tbl.Quest_EssamQuest, EssayQuest_tbl.[Answer-EssayQuest], 
+                         EssayQuest_tbl.Point_EssayQuest, Exams_tbl.Id_Exams
+FROM            ExamsQuestions_tbl INNER JOIN
+                         Exams_tbl ON ExamsQuestions_tbl.Id_Exams_ExamsQuestions = Exams_tbl.Id_Exams INNER JOIN
+                         ExamsType_tbl ON Exams_tbl.Id_ExamsType_Exams = ExamsType_tbl.Id_ExamsType INNER JOIN
+                         EssayQuest_tbl ON ExamsQuestions_tbl.Id_Quest_ExamsQuestions = EssayQuest_tbl.Id_EssayQuest
+WHERE        (ExamsQuestions_tbl.QuestionType_ExamsQuestions = 'Essay10') OR
+                         (ExamsQuestions_tbl.QuestionType_ExamsQuestions = 'Essay15') OR
+                         (ExamsQuestions_tbl.QuestionType_ExamsQuestions = 'Essay20')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name_ExamsType" DataSetColumn="Name_ExamsType" />
+              <Mapping SourceColumn="Date_Exams" DataSetColumn="Date_Exams" />
+              <Mapping SourceColumn="QuestionType_ExamsQuestions" DataSetColumn="QuestionType_ExamsQuestions" />
+              <Mapping SourceColumn="Quest_EssamQuest" DataSetColumn="Quest_EssamQuest" />
+              <Mapping SourceColumn="Answer-EssayQuest" DataSetColumn="Answer-EssayQuest" />
+              <Mapping SourceColumn="Point_EssayQuest" DataSetColumn="Point_EssayQuest" />
+              <Mapping SourceColumn="Id_Exams" DataSetColumn="Id_Exams" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ExamsGenerator_DBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByExamId" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByExamId" GeneratorSourceName="FillByExamId" GetMethodModifier="Public" GetMethodName="GetDataByExamId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByExamId" UserSourceName="FillByExamId">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ExamsType_tbl.Name_ExamsType, Exams_tbl.Date_Exams, ExamsQuestions_tbl.QuestionType_ExamsQuestions, EssayQuest_tbl.Quest_EssamQuest, EssayQuest_tbl.[Answer-EssayQuest], 
+                         EssayQuest_tbl.Point_EssayQuest, Exams_tbl.Id_Exams
+FROM            ExamsQuestions_tbl INNER JOIN
+                         Exams_tbl ON ExamsQuestions_tbl.Id_Exams_ExamsQuestions = Exams_tbl.Id_Exams INNER JOIN
+                         ExamsType_tbl ON Exams_tbl.Id_ExamsType_Exams = ExamsType_tbl.Id_ExamsType INNER JOIN
+                         EssayQuest_tbl ON ExamsQuestions_tbl.Id_Quest_ExamsQuestions = EssayQuest_tbl.Id_EssayQuest
+WHERE        (ExamsQuestions_tbl.QuestionType_ExamsQuestions = 'Essay10' OR
+                         ExamsQuestions_tbl.QuestionType_ExamsQuestions = 'Essay15' OR
+                         ExamsQuestions_tbl.QuestionType_ExamsQuestions = 'Essay20') AND (Exams_tbl.Id_Exams = @ExamId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ExamId" ColumnName="Id_Exams" DataSourceName="ExamsGenerator_DB.dbo.Exams_tbl" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ExamId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id_Exams" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Old Exams TableAdapter" GeneratorDataComponentClassName="Old_Exams_TableAdapter" Name="Old Exams " UserDataComponentName="Old Exams TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ExamsGenerator_DBConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Exams_tbl.*, ExamsType_tbl.*
+FROM            Exams_tbl INNER JOIN
+                         ExamsType_tbl ON Exams_tbl.Id_ExamsType_Exams = ExamsType_tbl.Id_ExamsType</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_Exams" DataSetColumn="Id_Exams" />
+              <Mapping SourceColumn="Name_Exams" DataSetColumn="Name_Exams" />
+              <Mapping SourceColumn="Id_ExamsType_Exams" DataSetColumn="Id_ExamsType_Exams" />
+              <Mapping SourceColumn="Date_Exams" DataSetColumn="Date_Exams" />
+              <Mapping SourceColumn="Id_ExamsType" DataSetColumn="Id_ExamsType" />
+              <Mapping SourceColumn="Name_ExamsType" DataSetColumn="Name_ExamsType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -870,6 +1029,188 @@ SELECT IdBigId_ExamsQuestions, Id_Exams_ExamsQuestions, Id_Quest_ExamsQuestions,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="getQCMQues" msprop:Generator_TableClassName="getQCMQuesDataTable" msprop:Generator_TableVarName="tablegetQCMQues" msprop:Generator_RowChangedName="getQCMQuesRowChanged" msprop:Generator_TablePropName="getQCMQues" msprop:Generator_RowDeletingName="getQCMQuesRowDeleting" msprop:Generator_RowChangingName="getQCMQuesRowChanging" msprop:Generator_RowEvHandlerName="getQCMQuesRowChangeEventHandler" msprop:Generator_RowDeletedName="getQCMQuesRowDeleted" msprop:Generator_RowClassName="getQCMQuesRow" msprop:Generator_UserTableName="getQCMQues" msprop:Generator_RowEvArgName="getQCMQuesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name_ExamsType" msprop:Generator_ColumnVarNameInTable="columnName_ExamsType" msprop:Generator_ColumnPropNameInRow="Name_ExamsType" msprop:Generator_ColumnPropNameInTable="Name_ExamsTypeColumn" msprop:Generator_UserColumnName="Name_ExamsType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Date_Exams" msprop:Generator_ColumnVarNameInTable="columnDate_Exams" msprop:Generator_ColumnPropNameInRow="Date_Exams" msprop:Generator_ColumnPropNameInTable="Date_ExamsColumn" msprop:Generator_UserColumnName="Date_Exams" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name_Exams" msprop:Generator_ColumnVarNameInTable="columnName_Exams" msprop:Generator_ColumnPropNameInRow="Name_Exams" msprop:Generator_ColumnPropNameInTable="Name_ExamsColumn" msprop:Generator_UserColumnName="Name_Exams" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quest_QCMQuest" msprop:Generator_ColumnVarNameInTable="columnQuest_QCMQuest" msprop:Generator_ColumnPropNameInRow="Quest_QCMQuest" msprop:Generator_ColumnPropNameInTable="Quest_QCMQuestColumn" msprop:Generator_UserColumnName="Quest_QCMQuest" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChoiceA_QCMQuest" msprop:Generator_ColumnVarNameInTable="columnChoiceA_QCMQuest" msprop:Generator_ColumnPropNameInRow="ChoiceA_QCMQuest" msprop:Generator_ColumnPropNameInTable="ChoiceA_QCMQuestColumn" msprop:Generator_UserColumnName="ChoiceA_QCMQuest" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChoiceB_QCMQuest" msprop:Generator_ColumnVarNameInTable="columnChoiceB_QCMQuest" msprop:Generator_ColumnPropNameInRow="ChoiceB_QCMQuest" msprop:Generator_ColumnPropNameInTable="ChoiceB_QCMQuestColumn" msprop:Generator_UserColumnName="ChoiceB_QCMQuest" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChoiceC_QCMQuest" msprop:Generator_ColumnVarNameInTable="columnChoiceC_QCMQuest" msprop:Generator_ColumnPropNameInRow="ChoiceC_QCMQuest" msprop:Generator_ColumnPropNameInTable="ChoiceC_QCMQuestColumn" msprop:Generator_UserColumnName="ChoiceC_QCMQuest" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ChoiceD_QCMQuest" msprop:Generator_ColumnVarNameInTable="columnChoiceD_QCMQuest" msprop:Generator_ColumnPropNameInRow="ChoiceD_QCMQuest" msprop:Generator_ColumnPropNameInTable="ChoiceD_QCMQuestColumn" msprop:Generator_UserColumnName="ChoiceD_QCMQuest" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="getTrueFQues" msprop:Generator_TableClassName="getTrueFQuesDataTable" msprop:Generator_TableVarName="tablegetTrueFQues" msprop:Generator_RowChangedName="getTrueFQuesRowChanged" msprop:Generator_TablePropName="getTrueFQues" msprop:Generator_RowDeletingName="getTrueFQuesRowDeleting" msprop:Generator_RowChangingName="getTrueFQuesRowChanging" msprop:Generator_RowEvHandlerName="getTrueFQuesRowChangeEventHandler" msprop:Generator_RowDeletedName="getTrueFQuesRowDeleted" msprop:Generator_RowClassName="getTrueFQuesRow" msprop:Generator_UserTableName="getTrueFQues" msprop:Generator_RowEvArgName="getTrueFQuesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Quest_TrueFalseQuest" msprop:Generator_ColumnVarNameInTable="columnQuest_TrueFalseQuest" msprop:Generator_ColumnPropNameInRow="Quest_TrueFalseQuest" msprop:Generator_ColumnPropNameInTable="Quest_TrueFalseQuestColumn" msprop:Generator_UserColumnName="Quest_TrueFalseQuest" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name_Exams" msprop:Generator_ColumnVarNameInTable="columnName_Exams" msprop:Generator_ColumnPropNameInRow="Name_Exams" msprop:Generator_ColumnPropNameInTable="Name_ExamsColumn" msprop:Generator_UserColumnName="Name_Exams" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Date_Exams" msprop:Generator_ColumnVarNameInTable="columnDate_Exams" msprop:Generator_ColumnPropNameInRow="Date_Exams" msprop:Generator_ColumnPropNameInTable="Date_ExamsColumn" msprop:Generator_UserColumnName="Date_Exams" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name_ExamsType" msprop:Generator_ColumnVarNameInTable="columnName_ExamsType" msprop:Generator_ColumnPropNameInRow="Name_ExamsType" msprop:Generator_ColumnPropNameInTable="Name_ExamsTypeColumn" msprop:Generator_UserColumnName="Name_ExamsType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Answer_TrueFalseQuest" msprop:Generator_ColumnVarNameInTable="columnAnswer_TrueFalseQuest" msprop:Generator_ColumnPropNameInRow="Answer_TrueFalseQuest" msprop:Generator_ColumnPropNameInTable="Answer_TrueFalseQuestColumn" msprop:Generator_UserColumnName="Answer_TrueFalseQuest" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="getEssayQues" msprop:Generator_TableClassName="getEssayQuesDataTable" msprop:Generator_TableVarName="tablegetEssayQues" msprop:Generator_TablePropName="getEssayQues" msprop:Generator_RowDeletingName="getEssayQuesRowDeleting" msprop:Generator_RowChangingName="getEssayQuesRowChanging" msprop:Generator_RowEvHandlerName="getEssayQuesRowChangeEventHandler" msprop:Generator_RowDeletedName="getEssayQuesRowDeleted" msprop:Generator_UserTableName="getEssayQues" msprop:Generator_RowChangedName="getEssayQuesRowChanged" msprop:Generator_RowEvArgName="getEssayQuesRowChangeEvent" msprop:Generator_RowClassName="getEssayQuesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name_ExamsType" msprop:Generator_ColumnVarNameInTable="columnName_ExamsType" msprop:Generator_ColumnPropNameInRow="Name_ExamsType" msprop:Generator_ColumnPropNameInTable="Name_ExamsTypeColumn" msprop:Generator_UserColumnName="Name_ExamsType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Date_Exams" msprop:Generator_ColumnVarNameInTable="columnDate_Exams" msprop:Generator_ColumnPropNameInRow="Date_Exams" msprop:Generator_ColumnPropNameInTable="Date_ExamsColumn" msprop:Generator_UserColumnName="Date_Exams" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QuestionType_ExamsQuestions" msprop:Generator_ColumnVarNameInTable="columnQuestionType_ExamsQuestions" msprop:Generator_ColumnPropNameInRow="QuestionType_ExamsQuestions" msprop:Generator_ColumnPropNameInTable="QuestionType_ExamsQuestionsColumn" msprop:Generator_UserColumnName="QuestionType_ExamsQuestions" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quest_EssamQuest" msprop:Generator_ColumnVarNameInTable="columnQuest_EssamQuest" msprop:Generator_ColumnPropNameInRow="Quest_EssamQuest" msprop:Generator_ColumnPropNameInTable="Quest_EssamQuestColumn" msprop:Generator_UserColumnName="Quest_EssamQuest" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Answer-EssayQuest" msprop:Generator_ColumnVarNameInTable="_columnAnswer_EssayQuest" msprop:Generator_ColumnPropNameInRow="_Answer_EssayQuest" msprop:Generator_ColumnPropNameInTable="_Answer_EssayQuestColumn" msprop:Generator_UserColumnName="Answer-EssayQuest" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Point_EssayQuest" msprop:Generator_ColumnVarNameInTable="columnPoint_EssayQuest" msprop:Generator_ColumnPropNameInRow="Point_EssayQuest" msprop:Generator_ColumnPropNameInTable="Point_EssayQuestColumn" msprop:Generator_UserColumnName="Point_EssayQuest" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_Exams" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_Exams" msprop:Generator_ColumnPropNameInRow="Id_Exams" msprop:Generator_ColumnPropNameInTable="Id_ExamsColumn" msprop:Generator_UserColumnName="Id_Exams" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Old_x0020_Exams_x0020_" msprop:Generator_TableClassName="Old_Exams_DataTable" msprop:Generator_TableVarName="tableOld_Exams_" msprop:Generator_TablePropName="Old_Exams_" msprop:Generator_RowDeletingName="Old_Exams_RowDeleting" msprop:Generator_RowChangingName="Old_Exams_RowChanging" msprop:Generator_RowEvHandlerName="Old_Exams_RowChangeEventHandler" msprop:Generator_RowDeletedName="Old_Exams_RowDeleted" msprop:Generator_UserTableName="Old Exams " msprop:Generator_RowChangedName="Old_Exams_RowChanged" msprop:Generator_RowEvArgName="Old_Exams_RowChangeEvent" msprop:Generator_RowClassName="Old_Exams_Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_Exams" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_Exams" msprop:Generator_ColumnPropNameInRow="Id_Exams" msprop:Generator_ColumnPropNameInTable="Id_ExamsColumn" msprop:Generator_UserColumnName="Id_Exams" type="xs:int" />
+              <xs:element name="Name_Exams" msprop:Generator_ColumnVarNameInTable="columnName_Exams" msprop:Generator_ColumnPropNameInRow="Name_Exams" msprop:Generator_ColumnPropNameInTable="Name_ExamsColumn" msprop:Generator_UserColumnName="Name_Exams" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_ExamsType_Exams" msprop:Generator_ColumnVarNameInTable="columnId_ExamsType_Exams" msprop:Generator_ColumnPropNameInRow="Id_ExamsType_Exams" msprop:Generator_ColumnPropNameInTable="Id_ExamsType_ExamsColumn" msprop:Generator_UserColumnName="Id_ExamsType_Exams" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Date_Exams" msprop:Generator_ColumnVarNameInTable="columnDate_Exams" msprop:Generator_ColumnPropNameInRow="Date_Exams" msprop:Generator_ColumnPropNameInTable="Date_ExamsColumn" msprop:Generator_UserColumnName="Date_Exams" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id_ExamsType" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_ExamsType" msprop:Generator_ColumnPropNameInRow="Id_ExamsType" msprop:Generator_ColumnPropNameInTable="Id_ExamsTypeColumn" msprop:Generator_UserColumnName="Id_ExamsType" type="xs:int" />
+              <xs:element name="Name_ExamsType" msprop:Generator_ColumnVarNameInTable="columnName_ExamsType" msprop:Generator_ColumnPropNameInRow="Name_ExamsType" msprop:Generator_ColumnPropNameInTable="Name_ExamsTypeColumn" msprop:Generator_UserColumnName="Name_ExamsType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -895,6 +1236,15 @@ SELECT IdBigId_ExamsQuestions, Id_Exams_ExamsQuestions, Id_Quest_ExamsQuestions,
     <xs:unique name="ExamsQuestions_tbl_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:ExamsQuestions_tbl" />
       <xs:field xpath="mstns:IdBigId_ExamsQuestions" />
+    </xs:unique>
+    <xs:unique name="getEssayQues_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:getEssayQues" />
+      <xs:field xpath="mstns:Id_Exams" />
+    </xs:unique>
+    <xs:unique name="Old_x0020_Exams_x0020__Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Old_x0020_Exams_x0020_" />
+      <xs:field xpath="mstns:Id_Exams" />
+      <xs:field xpath="mstns:Id_ExamsType" />
     </xs:unique>
   </xs:element>
 </xs:schema>

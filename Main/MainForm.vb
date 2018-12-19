@@ -62,4 +62,20 @@
     Private Sub ComboBox_ExamType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox_ExamType.SelectedIndexChanged
         getCount()
     End Sub
+
+    Private Sub Button_Old_Click(sender As Object, e As EventArgs) Handles Button_Old.Click
+        Dim Myold As OldExam
+        Myold = New OldExam()
+        Myold.ShowDialog()
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Close()
+    End Sub
+
+    Private Sub AddExamTypeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddExamTypeToolStripMenuItem.Click
+        Dim MyaddType As AddExamstype
+        MyaddType = New AddExamstype()
+        MyaddType.ShowDialog()
+    End Sub
 End Class

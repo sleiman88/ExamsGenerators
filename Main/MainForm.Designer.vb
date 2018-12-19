@@ -48,6 +48,8 @@ Partial Class MainForm
         Me.ExamsTypetblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ExamsType_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.ExamsType_tblTableAdapter()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.AddExamTypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.ExamsGenerator_DBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EssayQuesttblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -136,7 +138,7 @@ Partial Class MainForm
         '
         'MenuToolStripMenuItem
         '
-        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddQuestionsToolStripMenuItem})
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddQuestionsToolStripMenuItem, Me.AddExamTypeToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
         Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
         Me.MenuToolStripMenuItem.Text = "Menu"
@@ -227,6 +229,18 @@ Partial Class MainForm
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Exam Type"
         '
+        'AddExamTypeToolStripMenuItem
+        '
+        Me.AddExamTypeToolStripMenuItem.Name = "AddExamTypeToolStripMenuItem"
+        Me.AddExamTypeToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.AddExamTypeToolStripMenuItem.Text = "Add Exam type"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -245,6 +259,7 @@ Partial Class MainForm
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "MainForm"
         Me.Text = "MainForm"
         Me.MenuStrip1.ResumeLayout(False)
@@ -284,4 +299,6 @@ Partial Class MainForm
     Friend WithEvents ExamsTypetblBindingSource As BindingSource
     Friend WithEvents ExamsType_tblTableAdapter As ExamsGenerator_DBDataSetTableAdapters.ExamsType_tblTableAdapter
     Friend WithEvents Label4 As Label
+    Friend WithEvents AddExamTypeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
 End Class

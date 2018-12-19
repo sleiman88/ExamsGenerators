@@ -25,9 +25,6 @@ Partial Class GenerateAnExam
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox_Examtype = New System.Windows.Forms.TextBox()
-        Me.ExamsGenerator_DBDataSet = New Main.ExamsGenerator_DBDataSet()
-        Me.ExamsTypetblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ExamsType_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.ExamsType_tblTableAdapter()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -40,6 +37,11 @@ Partial Class GenerateAnExam
         Me.TextBox_TotalQCM = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Label_E20 = New System.Windows.Forms.Label()
         Me.Label_E15 = New System.Windows.Forms.Label()
         Me.Label_E10 = New System.Windows.Forms.Label()
@@ -64,6 +66,9 @@ Partial Class GenerateAnExam
         Me.TextBox_ExamName = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label_TotalGrade = New System.Windows.Forms.Label()
+        Me.ExamsGenerator_DBDataSet = New Main.ExamsGenerator_DBDataSet()
+        Me.ExamsTypetblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ExamsType_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.ExamsType_tblTableAdapter()
         Me.EssayQuesttblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EssayQuest_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.EssayQuest_tblTableAdapter()
         Me.QCMQuesttblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -74,11 +79,11 @@ Partial Class GenerateAnExam
         Me.Exams_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.Exams_tblTableAdapter()
         Me.ExamsQuestionstblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ExamsQuestions_tblTableAdapter = New Main.ExamsGenerator_DBDataSetTableAdapters.ExamsQuestions_tblTableAdapter()
-        CType(Me.ExamsGenerator_DBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ExamsTypetblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.ExamsGenerator_DBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ExamsTypetblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EssayQuesttblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QCMQuesttblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrueFalsetblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,20 +107,6 @@ Partial Class GenerateAnExam
         Me.TextBox_Examtype.Name = "TextBox_Examtype"
         Me.TextBox_Examtype.Size = New System.Drawing.Size(110, 20)
         Me.TextBox_Examtype.TabIndex = 1
-        '
-        'ExamsGenerator_DBDataSet
-        '
-        Me.ExamsGenerator_DBDataSet.DataSetName = "ExamsGenerator_DBDataSet"
-        Me.ExamsGenerator_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ExamsTypetblBindingSource
-        '
-        Me.ExamsTypetblBindingSource.DataMember = "ExamsType_tbl"
-        Me.ExamsTypetblBindingSource.DataSource = Me.ExamsGenerator_DBDataSet
-        '
-        'ExamsType_tblTableAdapter
-        '
-        Me.ExamsType_tblTableAdapter.ClearBeforeFill = True
         '
         'Label2
         '
@@ -221,6 +212,11 @@ Partial Class GenerateAnExam
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Label19)
+        Me.Panel2.Controls.Add(Me.Label18)
+        Me.Panel2.Controls.Add(Me.Label17)
+        Me.Panel2.Controls.Add(Me.Label16)
+        Me.Panel2.Controls.Add(Me.Label15)
         Me.Panel2.Controls.Add(Me.Label_E20)
         Me.Panel2.Controls.Add(Me.Label_E15)
         Me.Panel2.Controls.Add(Me.Label_E10)
@@ -238,8 +234,53 @@ Partial Class GenerateAnExam
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Location = New System.Drawing.Point(12, 173)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(193, 161)
+        Me.Panel2.Size = New System.Drawing.Size(223, 161)
         Me.Panel2.TabIndex = 13
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(154, 69)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(41, 13)
+        Me.Label19.TabIndex = 29
+        Me.Label19.Text = "Max(3)"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(154, 92)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(41, 13)
+        Me.Label18.TabIndex = 28
+        Me.Label18.Text = "Max(3)"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(154, 114)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(41, 13)
+        Me.Label17.TabIndex = 27
+        Me.Label17.Text = "Max(3)"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(154, 44)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(47, 13)
+        Me.Label16.TabIndex = 26
+        Me.Label16.Text = "Max(10)"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(154, 18)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(41, 13)
+        Me.Label15.TabIndex = 25
+        Me.Label15.Text = "Max(5)"
         '
         'Label_E20
         '
@@ -463,6 +504,20 @@ Partial Class GenerateAnExam
         Me.Label_TotalGrade.Text = "*"
         Me.Label_TotalGrade.Visible = False
         '
+        'ExamsGenerator_DBDataSet
+        '
+        Me.ExamsGenerator_DBDataSet.DataSetName = "ExamsGenerator_DBDataSet"
+        Me.ExamsGenerator_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ExamsTypetblBindingSource
+        '
+        Me.ExamsTypetblBindingSource.DataMember = "ExamsType_tbl"
+        Me.ExamsTypetblBindingSource.DataSource = Me.ExamsGenerator_DBDataSet
+        '
+        'ExamsType_tblTableAdapter
+        '
+        Me.ExamsType_tblTableAdapter.ClearBeforeFill = True
+        '
         'EssayQuesttblBindingSource
         '
         Me.EssayQuesttblBindingSource.DataMember = "EssayQuest_tbl"
@@ -521,14 +576,14 @@ Partial Class GenerateAnExam
         Me.Controls.Add(Me.TextBox_Examtype)
         Me.Name = "GenerateAnExam"
         Me.Text = "GenerateAnExam"
-        CType(Me.ExamsGenerator_DBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ExamsTypetblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.ExamsGenerator_DBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ExamsTypetblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EssayQuesttblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QCMQuesttblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrueFalsetblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -590,4 +645,9 @@ Partial Class GenerateAnExam
     Friend WithEvents Exams_tblTableAdapter As ExamsGenerator_DBDataSetTableAdapters.Exams_tblTableAdapter
     Friend WithEvents ExamsQuestionstblBindingSource As BindingSource
     Friend WithEvents ExamsQuestions_tblTableAdapter As ExamsGenerator_DBDataSetTableAdapters.ExamsQuestions_tblTableAdapter
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label17 As Label
 End Class
